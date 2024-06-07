@@ -1,0 +1,12 @@
+.appBtn {
+  height: 50px;
+  background: #f08a0a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.appBtn p {
+  color: #fff;
+}
