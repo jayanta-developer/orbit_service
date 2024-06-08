@@ -1,0 +1,59 @@
+.searchBox {
+  width: 100%;
+  height: 45px;
+  border: 1px solid #dad5d5;
+  border-radius: 7px;
+  position: relative;
+}
+.searchBox img {
+  position: absolute;
+  top: 9px;
+  right: 20px;
+}
+.searchBox input {
+  width: 100%;
+  height: 100%;
+  padding-left: 20px;
+  border: none;
+  border-radius: 7px;
+}
+.searchBox input:focus {
+  outline: none;
+}
+.dropBox {
+  width: 100%;
+  height: 45px;
+  border: 1px solid #dad5d5;
+  border-radius: 7px;
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-left: 20px;
+}
+.dropItemBox {
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  bottom: -67px;
+  flex-direction: column;
+  border: 1px solid #4e4c5462;
+  border-radius: 7px;
+  overflow: hidden;
+  background: #fff;
+  z-index: 9;
+}
+.dropItem {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  padding-left: 20px;
+  justify-content: start;
+  align-items: center;
+  border-bottom: 1px solid #4e4c5457;
+}
+.dropBox .dropIcon {
+  position: absolute;
+  top: 17px;
+  right: 13px;
+}

@@ -7,7 +7,7 @@
   gap: 20px;
 }
 .sideMenu {
-  width: 300px;
+  min-width: 300px;
   height: 100vh;
   border-radius: 10px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -16,8 +16,7 @@
   position: relative;
 }
 .mainBox {
-  width: 100%;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  width: 75%;
 }
 .mainClogo {
   width: 75%;
@@ -98,4 +97,135 @@
 }
 .colseMenuTabe p {
   color: #262528;
+}
+.sectionNav {
+  width: 100%;
+  height: 65px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.headerLabel {
+  width: 60%;
+}
+.navAvatarBox {
+  width: 40%;
+  min-width: 366px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.headerLabel p {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: #4e4c54;
+}
+.navCalBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.navCalBox p {
+  font-size: 14px !important;
+}
+.avatarBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.ballIcon {
+  position: relative;
+}
+.ballIcon .notifCount {
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  border-radius: 50%;
+  background: #f08a0a;
+  border: 2px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ballIcon .notifCount p {
+  color: #fff;
+  font-size: 11px !important;
+}
+.searchAndShotrBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 40px;
+  margin: 30px 0;
+}
+
+/* ------- */
+.workListBox {
+  width: 100%;
+  border: 1px solid #eaecf0;
+  border-radius: 16px;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+}
+.haderRow {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  background: #f2f4f7;
+  justify-content: start;
+  padding: 0 2%;
+}
+.haderRow .Tabelsel {
+  justify-content: center;
+}
+.Tabelsel {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  position: relative;
+}
+.TabelselItemCenter {
+  justify-content: center !important;
+}
+.TabelselItemStart {
+  justify-content: start !important;
+}
+.haderRow p {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  color: #475467;
+}
+.TabelRow {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  padding: 0 2%;
+  border: 1px solid #eaecf0;
+}
+.tabelFChechBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.haderRow .Tabelsel p {
+  font-weight: 600 !important;
+}
+.viewBox img {
+  width: 20px;
+  margin-right: 10px;
 }
