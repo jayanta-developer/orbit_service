@@ -1,0 +1,95 @@
+.createSection {
+  width: 100%;
+}
+.inputDropBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 55px 0;
+  margin-top: 75px;
+  gap: 30px;
+}
+.appInput {
+  width: 100%;
+  height: 45px;
+  border: 1px solid #dad5d5;
+  padding-left: 20px;
+  border-radius: 7px;
+  position: relative;
+}
+.appInput:focus {
+  outline: none;
+}
+.upLabel {
+  position: relative;
+}
+.dropLabel {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: #262528;
+  position: absolute;
+  top: -43px;
+  left: 0px;
+}
+.inputSection {
+  width: 100%;
+  gap: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.InnerinputSection {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.inputSectionHeader {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: #262528;
+}
+.inputLabel {
+  font-size: 14px !important;
+  color: #4e4c54;
+  margin-top: 30px !important;
+  margin-bottom: 10px !important;
+}
+.avatarBox {
+  width: 150px;
+  height: 150px;
+  position: relative;
+}
+.avatarEImg {
+  width: 100%;
+  height: 100%;
+}
+.avatarCIcon {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 29px;
+  right: 30px;
+}
+.enAddressTextArea {
+  height: 150px;
+  padding: 15px 20px;
+}
+.tabelAvatar {
+  min-width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tabelAvatar img {
+  width: 100%;
+  height: 100%;
+}
+.tabelEdit img {
+  width: 20px;
+  margin-right: 10px;
+}

@@ -30,17 +30,20 @@
   justify-content: start;
   align-items: center;
   padding-left: 20px;
+  cursor: pointer;
 }
 .dropItemBox {
   width: 100%;
+  max-height: 250px;
   position: absolute;
   left: 0px;
-  bottom: -67px;
+  top: 52px;
   flex-direction: column;
   border: 1px solid #4e4c5462;
   border-radius: 7px;
   overflow: hidden;
   background: #fff;
+  overflow: scroll;
   z-index: 9;
 }
 .dropItem {
@@ -51,6 +54,17 @@
   justify-content: start;
   align-items: center;
   border-bottom: 1px solid #4e4c5457;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.dropItem:hover {
+  background: #f08a0a;
+}
+.dropItem p {
+  transition: all 0.3s;
+}
+.dropItem:hover p {
+  color: #fff;
 }
 .dropBox .dropIcon {
   position: absolute;

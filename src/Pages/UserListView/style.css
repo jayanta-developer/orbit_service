@@ -33,6 +33,7 @@
   align-items: center;
   background: #c8d4dc;
   position: relative;
+  cursor: pointer;
 }
 .dropIcon {
   position: absolute;
@@ -139,6 +140,11 @@
   flex-direction: row;
   align-items: center;
   gap: 10px;
+  position: relative;
+}
+.avatarBox img {
+  transition: all 0.5s;
+  cursor: pointer;
 }
 .ballIcon {
   position: relative;
@@ -228,4 +234,64 @@
 .viewBox img {
   width: 20px;
   margin-right: 10px;
+}
+.pagenation {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  padding: 40px 0;
+}
+.pageNumberBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.tabelBtn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.tabelBtn img {
+  width: 10px;
+}
+.pageNumber {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 4px;
+}
+.pageNumber p {
+  font-size: 12px;
+}
+.pageNumberActive {
+  background: #f08a0a;
+}
+.pageNumberActive p {
+  color: #fff;
+}
+.avaratDropBox > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.avaratDropBox > div img {
+  width: 20px;
+}
+.avatarBox .dropItem {
+  height: 35px;
+}
+.avatarBox .dropItemBox {
+  bottom: -83px;
 }

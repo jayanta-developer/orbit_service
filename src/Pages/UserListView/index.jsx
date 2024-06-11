@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./style.css";
 
 import cLogo from "../../Assets/Images/coLogo.png";
@@ -15,6 +15,8 @@ import dArrow from "../../Assets/Images/dobelArrow.png"
 import GPDF from "../../Assets/Images/greenPDF.png";
 import BPDF from "../../Assets/Images/blackPDF.png";
 import eyeIcon from "../../Assets/Images/blackEyeIcon.png";
+import editIcon from "../../Assets/Images/icons8-edit-64.png"
+import logOutIcon from "../../Assets/Images/logout-24.png"
 
 
 //component
@@ -22,13 +24,17 @@ import { Box, Typography } from '@mui/material';
 import { SearchBar, DropBox } from "../../Components/Tools";
 
 //data
-import { ReportsApproved } from "../../Assets/Data"
+import { ReportsApproved, ReportsPending, ReportsDecline } from "../../Assets/Data"
 
 export default function UserListView() {
   const [sideDropItem, setSideDropItem] = useState(true);
   const [sideDropItem2, setSideDropItem2] = useState(true);
   const [shortDrop, setShortDrop] = useState(false)
-  const [shortDropVal, setShortDropVal] = useState("Shorted By Date - New")
+  const [shortDropVal, setShortDropVal] = useState("Shorted By Date - New");
+  const [currentPage, setCurrentPage] = useState(0);
+  const [newArrayData, setNewArrayData] = useState([]);
+  const [profileDrop, setProfileDrop] = useState(false)
+  const [selectedTab, setSelectedTab] = useState("All Reports")
 
   const serviceReportList = [
     "All Reports",
@@ -44,6 +50,37 @@ export default function UserListView() {
     "Shorted By Date - old",
   ]
 
+  const combinedArray = ReportsApproved.concat(ReportsPending, ReportsDecline);
+
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  const finalArray = selectedTab === "All Reports" ? shuffle(combinedArray) : selectedTab === "Approved Reports" ? ReportsApproved : selectedTab === "Canceled Reports" ? ReportsDecline : selectedTab === "Create Report" ? ReportsPending : [];
+
+
+  useEffect(() => {
+    printItemsByState(finalArray, currentPage);
+  }, [currentPage, selectedTab]);
+
+  function printItemsByState(array, page) {
+    const startIndex = page * 6;
+    const endIndex = (page + 1) * 6;
+    const itemsToPrint = array.slice(startIndex, endIndex);
+    setNewArrayData(itemsToPrint);
+  }
+
+  const handleNext = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+
+  const handlePrev = () => {
+    setCurrentPage((prevPage) => (prevPage > 0 ? prevPage - 1 : 0));
+  };
 
   return (
     <>
@@ -60,9 +97,9 @@ export default function UserListView() {
           </Box>
           <Box sx={{ height: sideDropItem ? '171px' : '0px' }} className={sideDropItem ? "sideMenuItemBox sideMenuItemBoxPad" : "sideMenuItemBox"}>
             {serviceReportList?.map((el, i) => (
-              <Box className="sideMenuSubItem">
-                <img src={blackDot} />
-                <Typography className='subMenuText'>{el}</Typography>
+              <Box onClick={() => setSelectedTab(el)} key={i} className="sideMenuSubItem">
+                <img src={selectedTab === el ? orangeDot : blackDot} />
+                <Typography className={selectedTab === el ? 'subMenuText subMenuTextActive' : "subMenuText"}>{el}</Typography>
               </Box>
             ))}
           </Box>
@@ -70,14 +107,14 @@ export default function UserListView() {
           {/* Engineers */}
           <Box mt={2} className="sideMenuDropBox" onClick={() => setSideDropItem2(!sideDropItem2)}>
             <img src={engineersIcon} />
-            <Typography>Service Report</Typography>
+            <Typography>Engineers</Typography>
             <img src={dropIcon} className='dropIcon' style={{ rotate: sideDropItem2 ? "180deg" : "0deg" }} />
           </Box>
           <Box sx={{ height: sideDropItem2 ? '171px' : '0px' }} className={sideDropItem2 ? "sideMenuItemBox sideMenuItemBoxPad" : "sideMenuItemBox"}>
             {engineersList?.map((el, i) => (
-              <Box className="sideMenuSubItem">
-                <img src={blackDot} />
-                <Typography className='subMenuText'>{el}</Typography>
+              <Box onClick={() => setSelectedTab(el)} key={i} className="sideMenuSubItem">
+                <img src={selectedTab === el ? orangeDot : blackDot} />
+                <Typography className={selectedTab === el ? 'subMenuText subMenuTextActive' : "subMenuText"}>{el}</Typography>
               </Box>
             ))}
           </Box>
@@ -110,11 +147,23 @@ export default function UserListView() {
 
               <Box className="avatarBox">
                 <img src={avatar} />
-                <Typography>User name</Typography>
-                <img src={dropIcon} />
+                <Typography sx={{ cursor: "pointer" }} onClick={() => setProfileDrop(!profileDrop)}>User name</Typography>
+                <img onClick={() => setProfileDrop(!profileDrop)} src={dropIcon} style={{ rotate: profileDrop ? "180deg" : "0deg" }} />
+                <Box className="dropItemBox avaratDropBox" sx={{ display: profileDrop ? "flex" : "none" }}>
+
+                  <Box onClick={() => setProfileDrop(false)} className="dropItem">
+                    <img src={editIcon} />
+                    <Typography ml={1}>Edit Profile</Typography>
+                  </Box>
+
+                  <Box onClick={() => setProfileDrop(false)} className="dropItem">
+                    <img src={logOutIcon} />
+                    <Typography ml={1}>logout</Typography>
+                  </Box>
+
+                </Box>
               </Box>
             </Box>
-
           </Box>
 
           <Box className="searchAndShotrBox">
@@ -152,39 +201,39 @@ export default function UserListView() {
               </Box>
             </Box>
             {ReportsApproved &&
-              ReportsApproved?.map((el, index) => (
+              newArrayData?.map((el, index) => (
                 <Box key={index} className="TabelRow" minWidth={"1100px"}>
 
                   <Box minWidth={"13%"} className="Tabelsel tabelFChechBox">
                     <input type="checkBox" />
-                    <Typography>{el.data}</Typography>
+                    <Typography>{el?.data}</Typography>
                   </Box>
                   <Box minWidth={"13%"} className="Tabelsel Tabelcentersel">
-                    <Typography>{el.report}</Typography>
+                    <Typography>{el?.report}</Typography>
                   </Box>
                   <Box minWidth={"21%"} className="Tabelsel Tabelcentersel">
-                    <Typography>{el.ClientName}</Typography>
+                    <Typography>{el?.ClientName}</Typography>
                   </Box>
                   <Box minWidth={"13%"} className="Tabelsel Tabelcentersel">
-                    <Typography>{el.ServiceType}</Typography>
+                    <Typography>{el?.ServiceType}</Typography>
                   </Box>
                   <Box minWidth={"13%"} className="Tabelsel Tabelcentersel">
                     {
-                      el.Status === "Approved" ?
+                      el?.Status === "Approved" ?
                         <Typography sx={{ color: "#1D8803" }}>Approved</Typography> :
-                        el.Status === "Pending" ?
+                        el?.Status === "Pending" ?
                           <Typography sx={{ color: "#F08A0A" }}>Pending</Typography> :
-                          el.Status === "Decline" ?
+                          el?.Status === "Decline" ?
                             <Typography sx={{ color: "#E11F1F" }}>Decline</Typography> : null
                     }
                   </Box>
                   <Box minWidth={"13%"} className="Tabelsel Tabelcentersel tabelFChechBox">
-                    <img src={el.Status === "Approved" ? GPDF : BPDF} />
-                    <Typography>{el.Report}</Typography>
+                    <img src={el?.Status === "Approved" ? GPDF : BPDF} />
+                    <Typography>{el?.Report}</Typography>
                   </Box>
                   <Box minWidth={"12%"} className="Tabelsel Tabelcentersel viewBox">
                     <img src={eyeIcon} />
-                    <Typography>{el.Action}</Typography>
+                    <Typography>{el?.Action}</Typography>
                   </Box>
 
                 </Box>
@@ -192,7 +241,58 @@ export default function UserListView() {
           </Box>
 
 
+          <Box className="pagenation">
+            <Box mr={1} onClick={handlePrev} className="tabelBtn">
+              <img style={{ rotate: "90deg" }} src={dropIcon} />
+            </Box>
 
+            <Box className="pageNumberBox">
+              <Box
+                onClick={() => setCurrentPage(0)}
+                className={
+                  currentPage === 0 ? "pageNumber pageNumberActive" : "pageNumber"
+                }
+              >
+                <p>1</p>
+              </Box>
+              <Box
+                onClick={() => setCurrentPage(1)}
+                className={
+                  currentPage === 1 ? "pageNumber pageNumberActive" : "pageNumber"
+                }
+              >
+                <p>2</p>
+              </Box>
+              <Box
+                onClick={() => setCurrentPage(2)}
+                className={
+                  currentPage === 2 ? "pageNumber pageNumberActive" : "pageNumber"
+                }
+              >
+                <p>3</p>
+              </Box>
+              <Box
+                onClick={() => setCurrentPage(3)}
+                className={
+                  currentPage === 3 ? "pageNumber pageNumberActive" : "pageNumber"
+                }
+              >
+                <p>4</p>
+              </Box>
+              <Box
+                onClick={() => setCurrentPage(4)}
+                className={
+                  currentPage === 4 ? "pageNumber pageNumberActive" : "pageNumber"
+                }
+              >
+                <p>5</p>
+              </Box>
+            </Box>
+
+            <Box ml={1} onClick={handleNext} className="tabelBtn">
+              <img style={{ rotate: "270deg" }} src={dropIcon} />
+            </Box>
+          </Box>
 
         </Box>
       </Box>

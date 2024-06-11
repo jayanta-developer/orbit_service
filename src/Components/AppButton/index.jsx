@@ -13,3 +13,14 @@ export const OrangeBtn = ({ width, btnText }) => {
     </>
   )
 }
+
+
+export const GreenBtn = ({ width, btnText }) => {
+  return (
+    <>
+      <Box sx={{ width: width || "140px" }} className="appBtn GreenBtn">
+        <Typography>{btnText}</Typography>
+      </Box >
+    </>
+  )
+}
