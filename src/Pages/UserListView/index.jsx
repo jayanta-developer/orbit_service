@@ -145,7 +145,7 @@ export default function UserListView() {
                 </Box>
               </Box>
 
-              <Box className="avatarBox">
+              <Box className="avatar_Box">
                 <img src={avatar} />
                 <Typography sx={{ cursor: "pointer" }} onClick={() => setProfileDrop(!profileDrop)}>User name</Typography>
                 <img onClick={() => setProfileDrop(!profileDrop)} src={dropIcon} style={{ rotate: profileDrop ? "180deg" : "0deg" }} />

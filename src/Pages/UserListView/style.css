@@ -135,14 +135,14 @@
 .navCalBox p {
   font-size: 14px !important;
 }
-.avatarBox {
+.avatar_Box {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 10px;
   position: relative;
 }
-.avatarBox img {
+.avatar_Box img {
   transition: all 0.5s;
   cursor: pointer;
 }
