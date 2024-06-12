@@ -1,5 +1,6 @@
 import "./style.css";
 
+
 //component
 import { Box, Typography } from '@mui/material';
 
@@ -19,6 +20,15 @@ export const GreenBtn = ({ width, btnText }) => {
   return (
     <>
       <Box sx={{ width: width || "140px" }} className="appBtn GreenBtn">
+        <Typography>{btnText}</Typography>
+      </Box >
+    </>
+  )
+}
+export const RedBtn = ({ width, btnText }) => {
+  return (
+    <>
+      <Box sx={{ width: width || "140px" }} className="appBtn RedBtn">
         <Typography>{btnText}</Typography>
       </Box >
     </>

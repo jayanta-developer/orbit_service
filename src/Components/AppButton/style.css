@@ -10,6 +10,10 @@
 .appBtn p {
   color: #fff;
 }
+
 .GreenBtn {
   background: #29c697;
+}
+.RedBtn {
+  background: #e2415e;
 }

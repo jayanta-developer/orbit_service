@@ -1,0 +1,367 @@
+.AdminApContainer {
+  width: 100%;
+}
+.navBackBar {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: #83898b;
+}
+.navBackBar p {
+  font-family: "Bree_Serif" !important;
+  font-size: 40px !important;
+  color: #fff;
+}
+.navBackBar img {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 39px;
+  left: 29px;
+  cursor: pointer;
+}
+.boxSection {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.boxItemSection {
+  width: 50%;
+}
+.f1Box {
+  height: 200px;
+}
+.f1Box img {
+  width: 350px;
+  height: 115px;
+}
+.aClogBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.coInformation {
+  background: #f6f6f6;
+  padding: 10px 30px;
+}
+.coInformation .clogHeader {
+  font-size: 30px !important;
+  font-family: "Bree_Serif" !important;
+  color: #000;
+}
+.coInformation .clogHeader span {
+  font-size: 30px !important;
+  font-family: "Bree_Serif" !important;
+  color: #fe8302;
+}
+.clogAddressText {
+  color: #4e4c54;
+  font-size: 20px !important;
+  margin: 16px 0 !important;
+}
+.coInformation div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.coInformation div img {
+  width: 20px;
+  height: 20px;
+}
+.coInformation div p {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: #4e4c54c7;
+}
+.f2Box {
+  width: 50%;
+  padding: 30px 25px;
+}
+.f2HeaderText span {
+  font-size: 20px !important;
+  color: #4e4c54;
+}
+.f2HeaderText {
+  font-size: 20px !important;
+  color: #f08a0a;
+  font-weight: 600 !important;
+}
+.fBoxLeftPadding {
+  padding-left: 50px;
+}
+.fBoxRightPadding {
+  padding-right: 50px;
+}
+.inputBoxWLabel {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 0;
+}
+.inpBWLabelText {
+  font-size: 20px !important;
+  color: #4e4c54;
+}
+.inputBoxWLabel .dropBox {
+  height: 55px;
+}
+.inputBoxWLabel .dropBox .dropIcon {
+  top: 22px;
+}
+.inputBoxWLabel .searchBox {
+  height: 55px;
+}
+.inputBoxWLabel .searchBox input {
+  background: #4e4c5400;
+}
+.textareaInput {
+  height: 60px;
+  border: 1px solid #dad5d5;
+  border-radius: 7px;
+  position: relative;
+}
+.textareaInput textarea {
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  background: #4e4c5400;
+  border: none;
+  padding: 10px;
+  padding-left: 20px;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+.textareaInput textarea:focus {
+  outline: none;
+}
+.dateInputRowBox {
+  width: 100%;
+  height: 78px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+.datePickerBox > div > div {
+  height: 55px;
+}
+.topP {
+  padding-top: 10px;
+  padding-left: 30px;
+}
+.addEngWbtn {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 22px 0;
+}
+.engLabel {
+  font-size: 22px !important;
+  font-weight: 5 00 !important;
+  color: #4e4c54;
+  font-family: "Bree_Serif" !important;
+}
+.AddEngBtn {
+  width: 180px;
+  height: 50px;
+  border-radius: 5px;
+  background: #fe8302;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.AddEngBtn p {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: #fff;
+}
+.engCardBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+.engCard {
+  width: 50%;
+  /* height: 55px; */
+  border: 1px solid #dad5d5;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  gap: 10px;
+  position: relative;
+}
+.enAvatarBox {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.enAvatarBox img {
+  width: 100%;
+  height: 100%;
+}
+.enNameBox {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.engCard p {
+  font-family: "Lato" !important;
+  font-weight: 600 !important;
+  font-size: 18px !important;
+  color: #262528;
+}
+.engCard sapn {
+  font-size: 16px !important;
+}
+.redCross {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+.otEnSaveInputBox {
+  width: 100%;
+  height: 56px;
+  position: relative;
+}
+.otEnSaveInputBox .appBtn {
+  height: 46px;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+.enCardBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20px 0;
+  gap: 16px;
+}
+.enWICard {
+  width: 188px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: 1px solid #dad5d5;
+  border-radius: 5px;
+  padding: 0 15px;
+  background: #8388891a;
+}
+.enWICard p {
+  font-family: "Lato" !important;
+}
+.enWICard .redCross {
+  top: 9px;
+  right: 7px;
+}
+.inputWlMargin {
+  margin: 38px 0;
+}
+.f3Nav {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  background: #e9e9e9;
+}
+
+.f3MainBox .f2Box {
+  padding: 0px;
+}
+.f3Nav p {
+  font-family: "Bree_Serif" !important;
+  font-size: 30px !important;
+}
+.BtextAreaBox {
+  width: 100%;
+  height: 290px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  padding: 16px 0;
+}
+.paddingOnlyLeft55 {
+  padding-left: 55px;
+}
+.paddingOnlyLeft30 {
+  padding-left: 27px;
+}
+.remarkInputBox {
+  border-top: 1px solid #a2afb2;
+  border-bottom: 1px solid #a2afb2;
+  padding: 25px 55px;
+  display: flex;
+  flex-direction: column;
+}
+.v2TextArLabel {
+  font-size: 25px !important;
+  font-family: "Bree_Serif" !important;
+  color: #262528;
+  margin-bottom: 5px !important;
+}
+.pr {
+  padding-right: 30px !important;
+}
+
+.textCountText {
+  font-size: 14px !important;
+  color: #4e4c54;
+  position: absolute;
+  right: 0px;
+  bottom: -23px;
+}
+.f4MainBox {
+  width: 100%;
+  padding: 20px 55px;
+  background: #f6f6f6;
+  padding-bottom: 60px;
+}
+.signatureMainBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+.signatureInnerBox {
+  width: 33%;
+  height: 200px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #ababab;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.signatureInnerBox .v2TextArLabel {
+  position: absolute;
+  bottom: -55px;
+}
+.buttonBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  gap: 20px;
+}
