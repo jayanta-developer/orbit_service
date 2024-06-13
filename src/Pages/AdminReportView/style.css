@@ -1,0 +1,34 @@
+.reportClientVal {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #262528;
+  font-family: "Lato" !important;
+}
+.topSBotBorder {
+  border: 1px solid #a2afb2;
+}
+.fBox1TopPadding {
+  padding-top: 10px;
+}
+.ADReportViewPage .topP {
+  padding-top: 25px;
+}
+.ADReportViewPage .f2HeaderText span {
+  font-size: 20px !important;
+  color: #4e4c54;
+  font-weight: 400 !important;
+}
+.ADReportViewPage .BtextAreaBox {
+  height: auto;
+}
+.ADReportViewPage .BtextAreaBox p {
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  font-family: "Lato" !important ;
+}
+.paddingR27 {
+  padding-right: 27px;
+}
+.paddingB37px {
+  padding-bottom: 37px;
+}
