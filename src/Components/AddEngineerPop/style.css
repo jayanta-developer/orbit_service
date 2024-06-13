@@ -1,0 +1,64 @@
+.grayBg {
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: rgba(128, 128, 128, 0.404);
+  z-index: 9;
+  position: absolute;
+}
+.addEngPop {
+  width: 32%;
+  max-width: 440px;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background: #fff;
+  border-radius: 10px;
+  position: relative;
+}
+.PopSearchBox {
+  width: 100%;
+}
+.enListBox {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+  overflow: scroll;
+}
+.enListRow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.addEngPop .enListRow {
+  position: relative;
+}
+.addEngPop .enNameBox {
+  padding: 1px 0;
+}
+.addEngPop .enNameBox p {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  font-family: "Lato" !important;
+}
+.addEngPop .check {
+  position: absolute;
+  top: 23px;
+  right: 22px;
+}
+.addEngPop .check input {
+  width: 18px;
+  height: 18px;
+}
+.addEngPop .redCross {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  cursor: pointer;
+}

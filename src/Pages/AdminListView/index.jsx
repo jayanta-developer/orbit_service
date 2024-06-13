@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "./style.css";
+import { useNavigate } from "react-router-dom"
+
 
 import cLogo from "../../Assets/Images/coLogo.png";
 import financeIcon from "../../Assets/Images/finance-bar 1.png";
@@ -31,9 +33,11 @@ import { GreenBtn } from "../../Components/AppButton"
 import { ReportsApproved, ReportsPending, ReportsDecline, countries, india_states, west_bengal_cities, engineersData } from "../../Assets/Data"
 
 export default function UserListView() {
+  const Navigate = useNavigate()
   const [sideDropItem, setSideDropItem] = useState(true);
   const [sideDropItem2, setSideDropItem2] = useState(false);
   const [sideDropItem3, setSideDropItem3] = useState(false);
+  const [sideDropItem4, setSideDropItem4] = useState(false);
   const [shortDrop, setShortDrop] = useState(false)
   const [shortDropVal, setShortDropVal] = useState("Shorted By Date - New");
   const [currentPage, setCurrentPage] = useState(0);
@@ -56,6 +60,8 @@ export default function UserListView() {
     "New Reports",
     "Approved Reports",
     "Canceled Reports",
+    "Create Report",
+    "Create Service"
   ]
   const clientsList = [
     "All Clients",
@@ -64,6 +70,12 @@ export default function UserListView() {
   const engineersList = [
     "All Engineers",
     "Add New Engineers"
+  ]
+  const regionList = [
+    "All Country",
+    "Add State",
+    "Add City",
+    "Add Region",
   ]
   const shortItems = [
     "Shorted By Date - New",
@@ -114,14 +126,21 @@ export default function UserListView() {
             setSideDropItem(!sideDropItem)
             setSideDropItem2(false)
             setSideDropItem3(false)
+            setSideDropItem4(false)
           }}>
             <img src={financeIcon} />
             <Typography>Service Report</Typography>
             <img src={dropIcon} className='dropIcon' style={{ rotate: sideDropItem ? "180deg" : "0deg" }} />
           </Box>
-          <Box sx={{ height: sideDropItem ? '171px' : '0px' }} className={sideDropItem ? "sideMenuItemBox sideMenuItemBoxPad" : "sideMenuItemBox"}>
+          <Box sx={{ height: sideDropItem ? '249px' : '0px' }} className={sideDropItem ? "sideMenuItemBox sideMenuItemBoxPad" : "sideMenuItemBox"}>
             {serviceReportList?.map((el, i) => (
-              <Box onClick={() => setSelectedTab(el)} key={i} className="sideMenuSubItem">
+              <Box onClick={() => {
+                setSelectedTab(el);
+                if (el === "Create Report") {
+                  Navigate("/admin/report/create");
+                }
+                setCurrentPage(0)
+              }} key={i} className="sideMenuSubItem">
                 <img src={selectedTab === el ? orangeDot : blackDot} />
                 <Typography className={selectedTab === el ? 'subMenuText subMenuTextActive' : "subMenuText"}>{el}</Typography>
               </Box>
@@ -133,12 +152,14 @@ export default function UserListView() {
             setSideDropItem2(!sideDropItem2)
             setSideDropItem(false)
             setSideDropItem3(false)
+            setSideDropItem4(false)
+
           }}>
             <img src={clientIcon} />
             <Typography>Clients</Typography>
             <img src={dropIcon} className='dropIcon' style={{ rotate: sideDropItem2 ? "180deg" : "0deg" }} />
           </Box>
-          <Box sx={{ height: sideDropItem2 ? '100px' : '0px' }} className={sideDropItem2 ? "sideMenuItemBox sideMenuItemBoxPad" : "sideMenuItemBox"}>
+          <Box sx={{ height: sideDropItem2 ? '93px' : '0px' }} className={sideDropItem2 ? "sideMenuItemBox sideMenuItemBoxPad" : "sideMenuItemBox"}>
             {clientsList?.map((el, i) => (
               <Box onClick={() => setSelectedTab(el)} key={i} className="sideMenuSubItem">
                 <img src={selectedTab === el ? orangeDot : blackDot} />
@@ -152,6 +173,8 @@ export default function UserListView() {
             setSideDropItem3(!sideDropItem3)
             setSideDropItem(false)
             setSideDropItem2(false)
+            setSideDropItem4(false)
+
           }}>
             <img src={engineersIcon} />
             <Typography>Engineers</Typography>
@@ -159,6 +182,26 @@ export default function UserListView() {
           </Box>
           <Box sx={{ height: sideDropItem3 ? '100px' : '0px' }} className={sideDropItem3 ? "sideMenuItemBox sideMenuItemBoxPad" : "sideMenuItemBox"}>
             {engineersList?.map((el, i) => (
+              <Box onClick={() => setSelectedTab(el)} key={i} className="sideMenuSubItem">
+                <img src={selectedTab === el ? orangeDot : blackDot} />
+                <Typography className={selectedTab === el ? 'subMenuText subMenuTextActive' : "subMenuText"}>{el}</Typography>
+              </Box>
+            ))}
+          </Box>
+
+          {/* Region */}
+          <Box mt={2} className="sideMenuDropBox" onClick={() => {
+            setSideDropItem4(!sideDropItem4)
+            setSideDropItem(false)
+            setSideDropItem2(false)
+            setSideDropItem3(false)
+          }}>
+            <img src={engineersIcon} />
+            <Typography>Region</Typography>
+            <img src={dropIcon} className='dropIcon' style={{ rotate: sideDropItem4 ? "180deg" : "0deg" }} />
+          </Box>
+          <Box sx={{ height: sideDropItem4 ? '171px' : '0px' }} className={sideDropItem4 ? "sideMenuItemBox sideMenuItemBoxPad" : "sideMenuItemBox"}>
+            {regionList?.map((el, i) => (
               <Box onClick={() => setSelectedTab(el)} key={i} className="sideMenuSubItem">
                 <img src={selectedTab === el ? orangeDot : blackDot} />
                 <Typography className={selectedTab === el ? 'subMenuText subMenuTextActive' : "subMenuText"}>{el}</Typography>
@@ -280,7 +323,7 @@ export default function UserListView() {
                       <img src={el?.Status === "Approved" ? GPDF : BPDF} />
                       <Typography>{el?.Report}</Typography>
                     </Box>
-                    <Box minWidth={"12%"} className="Tabelsel Tabelcentersel viewBox">
+                    <Box minWidth={"12%"} className="Tabelsel Tabelcentersel viewBox pointer" onClick={() => Navigate("/admin/report/view")}>
                       <img src={eyeIcon} />
                       <Typography>{el?.Action}</Typography>
                     </Box>

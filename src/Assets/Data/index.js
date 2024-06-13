@@ -1,4 +1,10 @@
-import img from "../../Assets/Images/enAvatar.png";
+import enUser1 from "../../Assets/Images/enUser1.png";
+import enUser2 from "../../Assets/Images/enUser2.png";
+import enUser3 from "../../Assets/Images/enUser3.png";
+import enUser4 from "../../Assets/Images/enUser4.png";
+import enUser5 from "../../Assets/Images/enUser5.png";
+import enUser6 from "../../Assets/Images/enUser6.png";
+
 export const ReportsApproved = [
   {
     data: "31-05-2024",
@@ -171,63 +177,63 @@ export const ReportsDecline = [
 
 export const engineersData = [
   {
-    img: img,
+    img: enUser1,
     name: "Sabyasachi Mukharjee",
     phone: "+91987654321",
     email: "smukharjee55@gmail.com",
     address: "KSSTM,Vikas Bhavan PO. Kolkata 700089",
   },
   {
-    img: img,
+    img: enUser2,
     name: "Sabyasachi Mukharjee",
     phone: "+91987654321",
     email: "smukharjee55@gmail.com",
     address: "KSSTM,Vikas Bhavan PO. Kolkata 700089",
   },
   {
-    img: img,
+    img: enUser3,
     name: "Sabyasachi Mukharjee",
     phone: "+91987654321",
     email: "smukharjee55@gmail.com",
     address: "KSSTM,Vikas Bhavan PO. Kolkata 700089",
   },
   {
-    img: img,
+    img: enUser4,
     name: "Sabyasachi Mukharjee",
     phone: "+91987654321",
     email: "smukharjee55@gmail.com",
     address: "KSSTM,Vikas Bhavan PO. Kolkata 700089",
   },
   {
-    img: img,
+    img: enUser5,
     name: "Sabyasachi Mukharjee",
     phone: "+91987654321",
     email: "smukharjee55@gmail.com",
     address: "KSSTM,Vikas Bhavan PO. Kolkata 700089",
   },
   {
-    img: img,
+    img: enUser6,
     name: "Sabyasachi Mukharjee",
     phone: "+91987654321",
     email: "smukharjee55@gmail.com",
     address: "KSSTM,Vikas Bhavan PO. Kolkata 700089",
   },
   {
-    img: img,
+    img: enUser1,
     name: "Sabyasachi Mukharjee",
     phone: "+91987654321",
     email: "smukharjee55@gmail.com",
     address: "KSSTM,Vikas Bhavan PO. Kolkata 700089",
   },
   {
-    img: img,
+    img: enUser2,
     name: "Sabyasachi Mukharjee",
     phone: "+91987654321",
     email: "smukharjee55@gmail.com",
     address: "KSSTM,Vikas Bhavan PO. Kolkata 700089",
   },
   {
-    img: img,
+    img: enUser3,
     name: "Sabyasachi Mukharjee",
     phone: "+91987654321",
     email: "smukharjee55@gmail.com",

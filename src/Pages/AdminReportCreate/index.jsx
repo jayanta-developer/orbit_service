@@ -21,7 +21,7 @@ import { OrangeBtn, RedBtn, GreenBtn } from "../../Components/AppButton"
 import AddEngineerPop from "../../Components/AddEngineerPop";
 
 
-export default function AdminApprove() {
+export default function AdminReportCreate() {
   const Navigate = useNavigate()
   const [clientNameDrop, setClientNameDrop] = useState(false)
   const [clientNameDropVal, setClientNameDropVal] = useState("National Council Of Science Museums")
@@ -37,10 +37,10 @@ export default function AdminApprove() {
   ]
 
   const clientNames = [
-    "National Council Of Science Museums 1",
-    "National Council Of Science Museums 2",
-    "National Council Of Science Museums 3",
-    "National Council Of Science Museums 4",
+    "Organization Name 1",
+    "Organization Name 2",
+    "Organization Name 3",
+
   ]
 
   const EnCard = ({ img, name, phone }) => {
@@ -68,7 +68,7 @@ export default function AdminApprove() {
 
   return (
     <>
-      <Box className="AdminApContainer">
+      <Box className="AdminApContainer ADcreateReportPage">
         <AddEngineerPop addEngPop={addEngPop} setAddEngPop={setAddEngPop} />
         <Box className="navBackBar">
           <img src={backArrow} onClick={() => Navigate("/admin/list-view")} />
@@ -90,19 +90,10 @@ export default function AdminApprove() {
 
         <Box className="boxSection">
           <Box sx={{ background: "#F6F6F6" }} className="f2Box fBoxLeftPadding">
-            <Typography className='f2HeaderText'><span>Report No:</span> 2016 Service Contact Under Warrenty</Typography>
-
             <Box className="inputBoxWLabel inputWlMargin">
-              <Typography className='inpBWLabelText'>Client Name:</Typography>
+              <Typography className='inpBWLabelText'>Organization Name:</Typography>
               <Box width={"65%"}>
                 <DropBox drop={clientNameDrop} setDrop={setClientNameDrop} dropVal={clientNameDropVal} setDropVal={setClientNameDropVal} dropItem={clientNames} />
-              </Box>
-            </Box>
-
-            <Box className="inputBoxWLabel inputWlMargin">
-              <Typography className='inpBWLabelText'>Order Date:</Typography>
-              <Box width={"65%"} className="searchBox">
-                <input type="text" placeholder='2014 Service Contact' />
               </Box>
             </Box>
 
@@ -159,8 +150,8 @@ export default function AdminApprove() {
             </Box>
 
             <Box className="engCardBox">
-              {EnCard({ name: "Sabyasachi Mukharjee", phone: "+91 1234578956", img: enUser1 })}
-              {EnCard({ name: "Satyajeet Ganguly", phone: "+91 1234578956", img: enUser2 })}
+              {/* {EnCard({ name: "Sabyasachi Mukharjee", phone: "+91 1234578956", img: enUser1 })}
+              {EnCard({ name: "Satyajeet Ganguly", phone: "+91 1234578956", img: enUser2 })} */}
             </Box>
 
             <Box className="addEngWbtn">
@@ -173,14 +164,14 @@ export default function AdminApprove() {
             </Box>
 
             <Box className="enCardBox">
-              <Box className="enWICard">
+              {/* <Box className="enWICard">
                 <Typography>Engineers Name 1</Typography>
                 <img className='redCross' src={redCrossIcon} />
               </Box>
               <Box className="enWICard">
                 <Typography>Engineers Name 2</Typography>
                 <img className='redCross' src={redCrossIcon} />
-              </Box>
+              </Box> */}
             </Box>
           </Box>
         </Box>

@@ -1,5 +1,6 @@
 .AdminApContainer {
   width: 100%;
+  position: relative;
 }
 .navBackBar {
   width: 100%;

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import "./style.css"
 import { Typography, Box } from '@mui/material'
+import { useNavigate } from "react-router-dom"
 
 //images
 import backArrow from '../../Assets/Images/backArrow.png';
@@ -14,6 +15,7 @@ import { RedBtn, GreenBtn } from "../../Components/AppButton"
 
 
 export default function AdminReportView() {
+  const Navigate = useNavigate()
 
   const EnCard = ({ img, name, phone }) => {
     return (
@@ -34,7 +36,7 @@ export default function AdminReportView() {
     <>
       <Box className="AdminApContainer ADReportViewPage">
         <Box className="navBackBar">
-          <img src={backArrow} />
+          <img src={backArrow} onClick={() => Navigate("/admin/list-view")} />
           <Typography>Service Report</Typography>
         </Box>
         <Box className="boxSection">
