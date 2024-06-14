@@ -336,3 +336,26 @@ export const west_bengal_cities = [
   "Rampurhat",
   "Bishnupur",
 ];
+
+export const bellDropItem = [
+  "AYAN PAL has Created a report",
+  "shakil ahmad has Created a report",
+  "sunil kumar has Created a report",
+  "shispal has Created a report",
+  "raju has Created a report",
+  "bhuri singh has Created a report",
+  "bhagvaan singh has Created a report",
+  "manish bansal has Created a report",
+  "surender singh has Created a report",
+  "vikram bahadur has Created a report",
+  "sunder jha has Created a report",
+  "bhupender singh has Created a report",
+  "sanjay has Created a report",
+  "vikram singh has Created a report",
+  "shiv prakash has Created a report",
+  "ramdin verma has Created a report",
+  "Christopher has Created a report",
+  "Samantha has Created a report",
+  "Ryan has Created a report",
+  "Piper has Created a report",
+];

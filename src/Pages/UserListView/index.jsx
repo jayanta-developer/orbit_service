@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "./style.css";
 
 import cLogo from "../../Assets/Images/coLogo.png";
+import SClogo from "../../Assets/Images/sClogo.png"
 import financeIcon from "../../Assets/Images/finance-bar 1.png";
 import engineersIcon from "../../Assets/Images/engineersIcon.png";
 import dropIcon from "../../Assets/Images/dropIcon.png";
@@ -24,7 +25,7 @@ import { Box, Typography } from '@mui/material';
 import { SearchBar, DropBox } from "../../Components/Tools";
 
 //data
-import { ReportsApproved, ReportsPending, ReportsDecline } from "../../Assets/Data"
+import { ReportsApproved, ReportsPending, ReportsDecline, bellDropItem } from "../../Assets/Data"
 
 export default function UserListView() {
   const [sideDropItem, setSideDropItem] = useState(true);
@@ -35,6 +36,10 @@ export default function UserListView() {
   const [newArrayData, setNewArrayData] = useState([]);
   const [profileDrop, setProfileDrop] = useState(false)
   const [selectedTab, setSelectedTab] = useState("All Reports")
+  const [bellDrop, setBellDrop] = useState(false)
+  const [bellDropVal, setBellDropVal] = useState()
+  const [sideMOpen, setSideMOpen] = useState(true)
+
 
   const serviceReportList = [
     "All Reports",
@@ -62,6 +67,10 @@ export default function UserListView() {
 
   const finalArray = selectedTab === "All Reports" ? shuffle(combinedArray) : selectedTab === "Approved Reports" ? ReportsApproved : selectedTab === "Canceled Reports" ? ReportsDecline : selectedTab === "Create Report" ? ReportsPending : [];
 
+  //print date
+  const date = new Date();
+  const options = { day: 'numeric', month: 'long', year: 'numeric' };
+  const formattedDate = date.toLocaleDateString('en-GB', options);
 
   useEffect(() => {
     printItemsByState(finalArray, currentPage);
@@ -85,21 +94,28 @@ export default function UserListView() {
   return (
     <>
       <Box className="listContainer userListBox">
-        <Box className="sideMenu">
-          <img className='mainClogo' src={cLogo} />
+        <Box className="sideMenu" minWidth={sideMOpen ? "300px" : "60px"}>
+          {
+            sideMOpen ?
+              <img className='mainClogo' src={cLogo} /> :
+              <img className='SmainClogo' src={SClogo} style={{ width: "50px" }} />
+          }
 
 
           {/* Service Repor */}
           <Box className="sideMenuDropBox" onClick={() => setSideDropItem(!sideDropItem)}>
             <img src={financeIcon} />
-            <Typography>Service Report</Typography>
-            <img src={dropIcon} className='dropIcon' style={{ rotate: sideDropItem ? "180deg" : "0deg" }} />
+            <Typography sx={{ display: sideMOpen ? "block" : "none" }}>Service Report</Typography>
+            <img src={dropIcon} className='dropIcon' style={{ rotate: sideDropItem ? "180deg" : "0deg", display: sideMOpen ? "block" : "none" }} />
           </Box>
           <Box sx={{ height: sideDropItem ? '171px' : '0px' }} className={sideDropItem ? "sideMenuItemBox sideMenuItemBoxPad" : "sideMenuItemBox"}>
             {serviceReportList?.map((el, i) => (
-              <Box onClick={() => setSelectedTab(el)} key={i} className="sideMenuSubItem">
+              <Box onClick={() => {
+                setSelectedTab(el)
+                setCurrentPage(0)
+              }} key={i} className="sideMenuSubItem">
                 <img src={selectedTab === el ? orangeDot : blackDot} />
-                <Typography className={selectedTab === el ? 'subMenuText subMenuTextActive' : "subMenuText"}>{el}</Typography>
+                <Typography sx={{ display: sideMOpen ? "block" : "none" }} className={selectedTab === el ? 'subMenuText subMenuTextActive' : "subMenuText"}>{el}</Typography>
               </Box>
             ))}
           </Box>
@@ -107,21 +123,21 @@ export default function UserListView() {
           {/* Engineers */}
           <Box mt={2} className="sideMenuDropBox" onClick={() => setSideDropItem2(!sideDropItem2)}>
             <img src={engineersIcon} />
-            <Typography>Engineers</Typography>
-            <img src={dropIcon} className='dropIcon' style={{ rotate: sideDropItem2 ? "180deg" : "0deg" }} />
+            <Typography sx={{ display: sideMOpen ? "block" : "none" }}>Engineers</Typography>
+            <img src={dropIcon} className='dropIcon' style={{ rotate: sideDropItem2 ? "180deg" : "0deg", display: sideMOpen ? "block" : "none" }} />
           </Box>
           <Box sx={{ height: sideDropItem2 ? '171px' : '0px' }} className={sideDropItem2 ? "sideMenuItemBox sideMenuItemBoxPad" : "sideMenuItemBox"}>
             {engineersList?.map((el, i) => (
               <Box onClick={() => setSelectedTab(el)} key={i} className="sideMenuSubItem">
                 <img src={selectedTab === el ? orangeDot : blackDot} />
-                <Typography className={selectedTab === el ? 'subMenuText subMenuTextActive' : "subMenuText"}>{el}</Typography>
+                <Typography sx={{ display: sideMOpen ? "block" : "none" }} className={selectedTab === el ? 'subMenuText subMenuTextActive' : "subMenuText"}>{el}</Typography>
               </Box>
             ))}
           </Box>
 
-          <Box className="colseMenuTabe">
+          <Box onClick={() => setSideMOpen(!sideMOpen)} className={sideMOpen ? "colseMenuTabeActive" : "colseMenuTabeActive colseMenuTabe"} >
             <img src={haumIcon} />
-            <Typography>Close Menu</Typography>
+            <Typography sx={{ display: sideMOpen ? "block" : "none" }}>Close Menu</Typography>
           </Box>
         </Box>
 
@@ -129,19 +145,28 @@ export default function UserListView() {
           {/* Service Repor */}
           <Box className="sectionNav">
             <Box className="headerLabel">
-              <Typography>Service Report</Typography>
+              <Typography>{selectedTab}</Typography>
             </Box>
 
             <Box className="navAvatarBox">
               <Box className='navCalBox'>
                 <img src={calendarIcon} />
-                <Typography>24 march 2021</Typography>
+                <Typography>{formattedDate}</Typography>
               </Box>
 
-              <Box className="ballIcon">
+              <Box className="bellIcon" onClick={() => setBellDrop(!bellDrop)}>
                 <img src={notificationIcon} />
                 <Box className="notifCount">
                   <p>6</p>
+                </Box>
+                <Box className="dropItemBox" sx={{ display: bellDrop ? "flex" : "none" }}>
+                  {
+                    bellDropItem?.map((el, i) => (
+                      <Box key={i} className="dropItem" onClick={() => setBellDropVal(el)}>
+                        <Typography>{el}</Typography>
+                      </Box>
+                    ))
+                  }
                 </Box>
               </Box>
 
@@ -295,6 +320,8 @@ export default function UserListView() {
           </Box>
 
         </Box>
+        <Box minWidth={"9px"} sx={{ display: sideMOpen ? "block" : "none", transition: "all 0.5s" }}></Box>
+
       </Box>
     </>
   )
