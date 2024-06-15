@@ -110,8 +110,8 @@ export default function UserListView() {
   }, [currentPage, selectedTab]);
 
   function printItemsByState(array, page) {
-    const startIndex = page * 6;
-    const endIndex = (page + 1) * 6;
+    const startIndex = page * 8;
+    const endIndex = (page + 1) * 8;
     const itemsToPrint = array.slice(startIndex, endIndex);
     setNewArrayData(itemsToPrint);
   }
@@ -280,10 +280,10 @@ export default function UserListView() {
 
           <Box width={"100%"} sx={{ display: selectedTab === "Add New Clients" || selectedTab === "Add New Engineers" || selectedTab === "All Engineers" ? "none" : "block" }}>
             <Box className="searchAndShotrBox">
-              <Box width={"65%"}>
+              <Box className="listPageSearchBox">
                 <SearchBar placeholder="Search.." />
               </Box>
-              <Box width={"35%"}>
+              <Box className="listPageDateDrop">
                 <DropBox dropItem={shortItems} drop={shortDrop} setDrop={setShortDrop} dropVal={shortDropVal} setDropVal={setShortDropVal} />
               </Box>
             </Box>

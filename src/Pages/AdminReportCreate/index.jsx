@@ -8,8 +8,6 @@ import backArrow from '../../Assets/Images/backArrow.png';
 import Clog from "../../Assets/Images/ClogB.png";
 import callIcon from "../../Assets/Images/phoneIcon.png";
 import addIcon from "../../Assets/Images/addIcon.png"
-import enUser1 from "../../Assets/Images/enUser1.png"
-import enUser2 from "../../Assets/Images/enUser2.png"
 import redCrossIcon from "../../Assets/Images/redCressIcon.png"
 
 //components
@@ -74,6 +72,13 @@ export default function AdminReportCreate() {
           <img src={backArrow} onClick={() => Navigate("/admin/list-view")} />
           <Typography>Service Report</Typography>
         </Box>
+        <Box className="MobileNavBackBar">
+          <img className='MClogo' src={Clog} />
+          <Box className="serviceLabel">
+            <Typography>Service Report</Typography>
+          </Box>
+        </Box>
+
         <Box className="boxSection">
           <Box className="boxItemSection f1Box aClogBox">
             <img src={Clog} />
@@ -99,14 +104,14 @@ export default function AdminReportCreate() {
 
             <Box className="inputBoxWLabel inputWlMargin">
               <Typography className='inpBWLabelText'>Type Of Instruments:</Typography>
-              <Box width={"65%"} className="textareaInput">
+              <Box className="textareaInput width65D">
                 <textarea type="text" placeholder='9 Channel Powerdome Nova + Starmaster SB Hybrid Planetarium' />
               </Box>
             </Box>
 
             <Box className="inputBoxWLabel inputWlMargin">
               <Typography className='inpBWLabelText'>Address:</Typography>
-              <Box width={"65%"} className="textareaInput">
+              <Box className="textareaInput width65D">
                 <textarea type="text" placeholder='KSSTM, Vikas Bhavan PO. Trivandrum. Kolkata 700089' />
               </Box>
             </Box>
@@ -183,7 +188,7 @@ export default function AdminReportCreate() {
             </Box>
 
             <Box className="BtextAreaBox paddingOnlyLeft55">
-              <Box width={"96%"} height={"95%"} className="textareaInput" >
+              <Box height={"95%"} className="textareaInput width96D" >
                 <textarea type="text" placeholder='Type Activity & Observations Here' />
               </Box>
             </Box>
@@ -195,14 +200,14 @@ export default function AdminReportCreate() {
               <Typography>Spare Parts Used:</Typography>
             </Box>
             <Box className="BtextAreaBox paddingOnlyLeft30 pr">
-              <Box width={"96%"} height={"95%"} className="textareaInput" >
+              <Box height={"95%"} className="textareaInput width96D" >
                 <textarea style={{ background: "#fff" }} type="text" placeholder='Type Spare Parts Here' />
               </Box>
             </Box>
           </Box>
         </Box>
 
-        <Box className="boxSection remarkInputBox">
+        <Box className="boxSection remarkInputBox textAreyaWLabelBox">
           <Typography className='v2TextArLabel'>Remarks, Information, Further Measure Necessary</Typography>
           <Box width={"100%"} height={"220px"} className="textareaInput">
             <textarea type="text" placeholder='9 Channel Powerdome Nova + Starmaster SB Hybrid Planetarium' />

@@ -5,7 +5,7 @@
 .navBackBar {
   width: 100%;
   height: 100px;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -27,10 +27,10 @@
 .boxSection {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 .boxItemSection {
-  width: 50%;
+  width: 100%;
 }
 .f1Box {
   height: 200px;
@@ -40,12 +40,12 @@
   height: 115px;
 }
 .aClogBox {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }
 .coInformation {
-  background: #f6f6f6;
+  background: #ebebeb;
   padding: 10px 30px;
 }
 .coInformation .clogHeader {
@@ -60,7 +60,7 @@
 }
 .clogAddressText {
   color: #4e4c54;
-  font-size: 20px !important;
+  font-size: 16px !important;
   margin: 16px 0 !important;
 }
 .coInformation div {
@@ -79,7 +79,7 @@
   color: #4e4c54c7;
 }
 .f2Box {
-  width: 50%;
+  width: 100%;
   padding: 30px 25px;
 }
 .f2HeaderText span {
@@ -92,10 +92,10 @@
   font-weight: 600 !important;
 }
 .fBoxLeftPadding {
-  padding-left: 50px;
+  padding-left: 30px;
 }
 .fBoxRightPadding {
-  padding-right: 50px;
+  padding-right: 30px;
 }
 .inputBoxWLabel {
   width: 100%;
@@ -107,7 +107,7 @@
   margin: 16px 0;
 }
 .inpBWLabelText {
-  font-size: 20px !important;
+  font-size: 16px !important;
   color: #4e4c54;
 }
 .inputBoxWLabel .dropBox {
@@ -165,7 +165,7 @@
   margin: 22px 0;
 }
 .engLabel {
-  font-size: 22px !important;
+  font-size: 16px !important;
   font-weight: 5 00 !important;
   color: #4e4c54;
   font-family: "Bree_Serif" !important;
@@ -297,11 +297,10 @@
   height: 290px;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  padding: 16px 0;
+  padding: 16px 30px;
 }
 .paddingOnlyLeft55 {
-  padding-left: 55px;
+  padding-left: 30px;
 }
 .paddingOnlyLeft30 {
   padding-left: 27px;
@@ -309,12 +308,12 @@
 .remarkInputBox {
   border-top: 1px solid #a2afb2;
   border-bottom: 1px solid #a2afb2;
-  padding: 25px 55px;
+  padding: 25px 30px;
   display: flex;
   flex-direction: column;
 }
 .v2TextArLabel {
-  font-size: 25px !important;
+  font-size: 16px !important;
   font-family: "Bree_Serif" !important;
   color: #262528;
   margin-bottom: 5px !important;
@@ -332,7 +331,7 @@
 }
 .f4MainBox {
   width: 100%;
-  padding: 20px 55px;
+  padding: 20px 30px;
   background: #f6f6f6;
   padding-bottom: 60px;
 }
@@ -347,7 +346,7 @@
 }
 .signatureInnerBox {
   width: 33%;
-  height: 200px;
+  height: 100px;
   background: #fff;
   border-radius: 10px;
   border: 1px solid #ababab;
@@ -365,4 +364,114 @@
   flex-direction: row;
   justify-content: end;
   gap: 20px;
+}
+.MobileNavBackBar {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.MobileNavBackBar .MClogo {
+  width: 40%;
+  margin-left: 20px;
+}
+.serviceLabel {
+  width: 50%;
+  height: 40px;
+  background: #83898b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.serviceLabel p {
+  font-size: 20px !important;
+  color: #fff;
+  font-family: "Bree_Serif" !important;
+}
+.width65D {
+  width: 65%;
+}
+.width96D {
+  width: 100%;
+}
+.textAreyaWLabelBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column !important;
+}
+/* tabe view */
+@media (min-width: 768px) {
+  .serviceLabel {
+    height: 65px;
+  }
+  .serviceLabel p {
+    font-size: 30px !important;
+  }
+  .clogAddressText {
+    font-size: 20px !important;
+  }
+}
+/* desktop view */
+
+@media (min-width: 1000px) {
+  .navBackBar {
+    display: flex;
+  }
+  .MobileNavBackBar {
+    display: none;
+  }
+  .boxSection {
+    flex-direction: row;
+  }
+  .aClogBox {
+    display: flex;
+  }
+  .boxItemSection {
+    width: 50%;
+  }
+  .f2Box {
+    width: 50%;
+  }
+  .fBoxLeftPadding {
+    padding-left: 50px;
+  }
+  .paddingOnlyLeft55 {
+    padding-left: 55px;
+  }
+  .remarkInputBox {
+    padding: 25px 50px;
+  }
+  .f4MainBox {
+    padding: 20px 50px;
+  }
+  .signatureInnerBox {
+    height: 200px;
+  }
+  .v2TextArLabel {
+    font-size: 25px !important;
+  }
+  .engLabel {
+    font-size: 22px !important;
+  }
+  .inpBWLabelText {
+    font-size: 20px !important;
+  }
+  .width65D {
+    width: 65%;
+  }
+  .width96D {
+    width: 100%;
+  }
+  .BtextAreaBox {
+    /* padding: 16px 0; */
+  }
+  .fBoxRightPadding {
+    padding-right: 50px;
+  }
+  .pr {
+    padding-right: 50px !important;
+  }
 }

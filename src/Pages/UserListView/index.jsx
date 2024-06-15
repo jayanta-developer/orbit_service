@@ -38,7 +38,7 @@ export default function UserListView() {
   const [selectedTab, setSelectedTab] = useState("All Reports")
   const [bellDrop, setBellDrop] = useState(false)
   const [bellDropVal, setBellDropVal] = useState()
-  const [sideMOpen, setSideMOpen] = useState(true)
+  const [sideMOpen, setSideMOpen] = useState(false)
 
 
   const serviceReportList = [
@@ -77,8 +77,8 @@ export default function UserListView() {
   }, [currentPage, selectedTab]);
 
   function printItemsByState(array, page) {
-    const startIndex = page * 6;
-    const endIndex = (page + 1) * 6;
+    const startIndex = page * 8;
+    const endIndex = (page + 1) * 8;
     const itemsToPrint = array.slice(startIndex, endIndex);
     setNewArrayData(itemsToPrint);
   }
@@ -192,10 +192,10 @@ export default function UserListView() {
           </Box>
 
           <Box className="searchAndShotrBox">
-            <Box width={"65%"}>
+            <Box className="listPageSearchBox" >
               <SearchBar placeholder="Search.." />
             </Box>
-            <Box width={"35%"}>
+            <Box className="listPageDateDrop" >
               <DropBox dropItem={shortItems} drop={shortDrop} setDrop={setShortDrop} dropVal={shortDropVal} setDropVal={setShortDropVal} />
             </Box>
           </Box>

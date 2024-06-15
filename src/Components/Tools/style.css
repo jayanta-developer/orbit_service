@@ -69,5 +69,11 @@
 .dropBox .dropIcon {
   position: absolute;
   top: 17px;
-  right: 13px;
+  right: 24px;
+}
+
+@media (min-width: 600px) {
+  .dropBox .dropIcon {
+    right: 13px;
+  }
 }

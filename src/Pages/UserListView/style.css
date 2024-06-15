@@ -1,13 +1,13 @@
 .listContainer {
   width: 100%;
-  padding: 20px 30px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: start;
+  gap: 10px;
 }
 .sideMenu {
   height: 100vh;
+  min-height: 100vh;
   border-radius: 10px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   display: flex;
@@ -16,7 +16,7 @@
   transition: all 0.3s;
 }
 .mainBox {
-  width: 100%;
+  width: 80%;
 }
 .mainClogo {
   width: 75%;
@@ -84,7 +84,7 @@
 }
 .colseMenuTabeActive {
   position: absolute;
-  bottom: 0px;
+  bottom: 20px;
   width: 91%;
   height: 60px;
   border-radius: 10px;
@@ -116,36 +116,36 @@
 }
 .sectionNav {
   width: 100%;
-  height: 65px;
+  height: 180px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 10px;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 20px;
 }
-.headerLabel {
-  width: 60%;
-}
+
 .navAvatarBox {
-  width: 40%;
-  min-width: 366px;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column-reverse;
+  align-items: start;
   justify-content: space-between;
+  max-width: 495px;
 }
 .headerLabel p {
   font-size: 20px !important;
   font-weight: 600 !important;
   color: #4e4c54;
+  text-align: center;
 }
 .navCalBox {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 10px;
+  justify-content: center;
 }
 .navCalBox p {
   font-size: 14px !important;
@@ -174,6 +174,9 @@
 }
 .bellIcon {
   position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: end;
 }
 .bellIcon .notifCount {
   width: 23px;
@@ -196,10 +199,17 @@
 .searchAndShotrBox {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  gap: 40px;
+  gap: 10px;
   margin: 30px 0;
+}
+.searchAndShotrBox .listPageSearchBox {
+  width: 100%;
+}
+.searchAndShotrBox .listPageDateDrop {
+  width: 100%;
+  min-width: 230px;
 }
 
 /* ------- */
@@ -332,4 +342,78 @@
 .bellIcon .dropItem {
   min-height: 60px;
   padding: 0 20px;
+}
+
+@media (min-width: 600px) {
+  .navAvatarBox {
+    flex-direction: row;
+    align-items: center;
+  }
+  .sectionNav {
+    height: 110px;
+    padding: 10px 20px;
+  }
+  .headerLabel p {
+    text-align: start;
+  }
+  .listContainer {
+    gap: 20px;
+    padding: 20px 0px;
+  }
+  .searchAndShotrBox {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+    margin: 30px 0;
+  }
+  .searchAndShotrBox .listPageSearchBox {
+    width: 65%;
+  }
+  .searchAndShotrBox .listPageDateDrop {
+    width: 35%;
+  }
+  .navCalBox {
+    width: unset;
+    justify-content: start;
+  }
+  .bellIcon {
+    width: unset;
+    justify-content: unset;
+  }
+}
+
+/* tabe view */
+@media (min-width: 768px) {
+  .mainBox {
+    width: 87%;
+  }
+  .sectionNav {
+    flex-wrap: nowrap;
+    height: 65px;
+    flex-direction: row;
+    align-items: center;
+  }
+  .navAvatarBox {
+    width: 40%;
+    min-width: 366px;
+  }
+  .headerLabel {
+    width: 60%;
+  }
+}
+/* desktop view */
+
+@media (min-width: 1000px) {
+  .listContainer {
+    padding: 20px 30px;
+    justify-content: space-between;
+  }
+  .mainBox {
+    width: 100%;
+  }
+  .sideMenu {
+    height: auto;
+  }
 }
