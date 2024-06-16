@@ -74,6 +74,12 @@ export default function AdminApprove() {
           <img src={backArrow} onClick={() => Navigate("/admin/list-view")} />
           <Typography>Service Report</Typography>
         </Box>
+        <Box className="MobileNavBackBar">
+          <img className='MClogo' src={Clog} />
+          <Box className="serviceLabel">
+            <Typography>Service Report</Typography>
+          </Box>
+        </Box>
         <Box className="boxSection">
           <Box className="boxItemSection f1Box aClogBox">
             <img src={Clog} />
@@ -94,28 +100,28 @@ export default function AdminApprove() {
 
             <Box className="inputBoxWLabel inputWlMargin">
               <Typography className='inpBWLabelText'>Client Name:</Typography>
-              <Box width={"65%"}>
+              <Box className="width65D">
                 <DropBox drop={clientNameDrop} setDrop={setClientNameDrop} dropVal={clientNameDropVal} setDropVal={setClientNameDropVal} dropItem={clientNames} />
               </Box>
             </Box>
 
             <Box className="inputBoxWLabel inputWlMargin">
               <Typography className='inpBWLabelText'>Order Date:</Typography>
-              <Box width={"65%"} className="searchBox">
+              <Box className="searchBox width65D">
                 <input type="text" placeholder='2014 Service Contact' />
               </Box>
             </Box>
 
             <Box className="inputBoxWLabel inputWlMargin">
               <Typography className='inpBWLabelText'>Type Of Instruments:</Typography>
-              <Box width={"65%"} className="textareaInput">
+              <Box className="textareaInput width65D">
                 <textarea type="text" placeholder='9 Channel Powerdome Nova + Starmaster SB Hybrid Planetarium' />
               </Box>
             </Box>
 
             <Box className="inputBoxWLabel inputWlMargin">
               <Typography className='inpBWLabelText'>Address:</Typography>
-              <Box width={"65%"} className="textareaInput">
+              <Box className="textareaInput width65D">
                 <textarea type="text" placeholder='KSSTM, Vikas Bhavan PO. Trivandrum. Kolkata 700089' />
               </Box>
             </Box>
@@ -124,8 +130,8 @@ export default function AdminApprove() {
           <Box className="f2Box fBoxRightPadding topP">
             <Box className="dateInputRowBox">
               <Box className="inputBoxWLabel">
-                <Typography className='inpBWLabelText'>Start Date:</Typography>
-                <Box width={"65%"} className="datePickerBox">
+                <Typography minWidth={"108px"} className='inpBWLabelText'>Start Date:</Typography>
+                <Box className="datePickerBox width65D">
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DatePicker />
                   </LocalizationProvider>
@@ -133,8 +139,8 @@ export default function AdminApprove() {
               </Box>
 
               <Box className="inputBoxWLabel">
-                <Typography className='inpBWLabelText'>End Date:</Typography>
-                <Box width={"65%"} className="datePickerBox">
+                <Typography minWidth={"108px"} className='inpBWLabelText'>End Date:</Typography>
+                <Box className="datePickerBox width65D">
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DatePicker />
                   </LocalizationProvider>
@@ -145,7 +151,7 @@ export default function AdminApprove() {
 
             <Box className="inputBoxWLabel">
               <Typography className='inpBWLabelText'>Type Of Service:</Typography>
-              <Box width={"65%"}>
+              <Box className="width65D">
                 <DropBox drop={serviceDrop} setDrop={setServiceDrop} dropVal={serviceDropVal} setDropVal={setServiceDropVal} dropItem={serviceList} />
               </Box>
             </Box>
@@ -192,7 +198,7 @@ export default function AdminApprove() {
             </Box>
 
             <Box className="BtextAreaBox paddingOnlyLeft55">
-              <Box width={"96%"} height={"95%"} className="textareaInput" >
+              <Box className="textareaInput width96D remarkBoxH" >
                 <textarea type="text" placeholder='Type Activity & Observations Here' />
               </Box>
             </Box>
@@ -200,20 +206,20 @@ export default function AdminApprove() {
 
 
           <Box sx={{ background: '#F6F6F6' }} className="f2Box">
-            <Box sx={{ background: "#DADADA", paddingLeft: "30px" }} className="f3Nav">
+            <Box sx={{ background: "#DADADA" }} className="f3Nav spareText">
               <Typography>Spare Parts Used:</Typography>
             </Box>
             <Box className="BtextAreaBox paddingOnlyLeft30 pr">
-              <Box width={"96%"} height={"95%"} className="textareaInput" >
+              <Box className="textareaInput width96D remarkBoxH" >
                 <textarea style={{ background: "#fff" }} type="text" placeholder='Type Spare Parts Here' />
               </Box>
             </Box>
           </Box>
         </Box>
 
-        <Box className="boxSection remarkInputBox">
+        <Box className="boxSection remarkInputBox textAreyaWLabelBox">
           <Typography className='v2TextArLabel'>Remarks, Information, Further Measure Necessary</Typography>
-          <Box width={"100%"} height={"220px"} className="textareaInput">
+          <Box width={"100%"} className="textareaInput remarkBoxH ">
             <textarea type="text" placeholder='9 Channel Powerdome Nova + Starmaster SB Hybrid Planetarium' />
             <Typography className='textCountText'>0/200</Typography>
           </Box>

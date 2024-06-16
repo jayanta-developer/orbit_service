@@ -13,7 +13,7 @@
 .searchBox input {
   width: 100%;
   height: 100%;
-  padding-left: 20px;
+  padding-left: 10px;
   border: none;
   border-radius: 7px;
 }
@@ -29,8 +29,11 @@
   display: flex;
   justify-content: start;
   align-items: center;
-  padding-left: 20px;
   cursor: pointer;
+  padding-left: 10px;
+}
+.dropBox p {
+  font-size: 13px !important;
 }
 .dropItemBox {
   width: 100%;
@@ -76,4 +79,21 @@
   .dropBox .dropIcon {
     right: 13px;
   }
+}
+
+/* tabe view */
+@media (min-width: 768px) {
+  .dropBox {
+    padding-left: 20px;
+  }
+  .searchBox input {
+    padding-left: 20px;
+  }
+  .dropBox p {
+    font-size: 16px !important;
+  }
+}
+/* desktop view */
+
+@media (min-width: 1000px) {
 }

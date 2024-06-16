@@ -96,21 +96,21 @@ export default function AdminReportCreate() {
         <Box className="boxSection">
           <Box sx={{ background: "#F6F6F6" }} className="f2Box fBoxLeftPadding">
             <Box className="inputBoxWLabel inputWlMargin">
-              <Typography className='inpBWLabelText'>Organization Name:</Typography>
-              <Box width={"65%"}>
+              <Typography minWidth={"187px"} className='inpBWLabelText'>Organization Name :</Typography>
+              <Box className="width65D" >
                 <DropBox drop={clientNameDrop} setDrop={setClientNameDrop} dropVal={clientNameDropVal} setDropVal={setClientNameDropVal} dropItem={clientNames} />
               </Box>
             </Box>
 
             <Box className="inputBoxWLabel inputWlMargin">
-              <Typography className='inpBWLabelText'>Type Of Instruments:</Typography>
+              <Typography minWidth={"194px"} className='inpBWLabelText'>Type Of Instruments :</Typography>
               <Box className="textareaInput width65D">
                 <textarea type="text" placeholder='9 Channel Powerdome Nova + Starmaster SB Hybrid Planetarium' />
               </Box>
             </Box>
 
             <Box className="inputBoxWLabel inputWlMargin">
-              <Typography className='inpBWLabelText'>Address:</Typography>
+              <Typography className='inpBWLabelText'>Address :</Typography>
               <Box className="textareaInput width65D">
                 <textarea type="text" placeholder='KSSTM, Vikas Bhavan PO. Trivandrum. Kolkata 700089' />
               </Box>
@@ -120,8 +120,8 @@ export default function AdminReportCreate() {
           <Box className="f2Box fBoxRightPadding topP">
             <Box className="dateInputRowBox">
               <Box className="inputBoxWLabel">
-                <Typography className='inpBWLabelText'>Start Date:</Typography>
-                <Box width={"65%"} className="datePickerBox">
+                <Typography minWidth={"108px"} className='inpBWLabelText'>Start Date :</Typography>
+                <Box className="datePickerBox width65D">
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DatePicker />
                   </LocalizationProvider>
@@ -129,8 +129,8 @@ export default function AdminReportCreate() {
               </Box>
 
               <Box className="inputBoxWLabel">
-                <Typography className='inpBWLabelText'>End Date:</Typography>
-                <Box width={"65%"} className="datePickerBox">
+                <Typography minWidth={"108px"} className='inpBWLabelText'>End Date :</Typography>
+                <Box className="datePickerBox width65D">
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DatePicker />
                   </LocalizationProvider>
@@ -140,8 +140,8 @@ export default function AdminReportCreate() {
             </Box>
 
             <Box className="inputBoxWLabel">
-              <Typography className='inpBWLabelText'>Type Of Service:</Typography>
-              <Box width={"65%"}>
+              <Typography className='inpBWLabelText'>Type Of Service :</Typography>
+              <Box className="width65D">
                 <DropBox drop={serviceDrop} setDrop={setServiceDrop} dropVal={serviceDropVal} setDropVal={setServiceDropVal} dropItem={serviceList} />
               </Box>
             </Box>
@@ -155,8 +155,6 @@ export default function AdminReportCreate() {
             </Box>
 
             <Box className="engCardBox">
-              {/* {EnCard({ name: "Sabyasachi Mukharjee", phone: "+91 1234578956", img: enUser1 })}
-              {EnCard({ name: "Satyajeet Ganguly", phone: "+91 1234578956", img: enUser2 })} */}
             </Box>
 
             <Box className="addEngWbtn">
@@ -169,14 +167,6 @@ export default function AdminReportCreate() {
             </Box>
 
             <Box className="enCardBox">
-              {/* <Box className="enWICard">
-                <Typography>Engineers Name 1</Typography>
-                <img className='redCross' src={redCrossIcon} />
-              </Box>
-              <Box className="enWICard">
-                <Typography>Engineers Name 2</Typography>
-                <img className='redCross' src={redCrossIcon} />
-              </Box> */}
             </Box>
           </Box>
         </Box>
@@ -196,7 +186,7 @@ export default function AdminReportCreate() {
 
 
           <Box sx={{ background: '#F6F6F6' }} className="f2Box">
-            <Box sx={{ background: "#DADADA", paddingLeft: "30px" }} className="f3Nav">
+            <Box sx={{ background: "#DADADA" }} className="f3Nav spareText">
               <Typography>Spare Parts Used:</Typography>
             </Box>
             <Box className="BtextAreaBox paddingOnlyLeft30 pr">
@@ -209,7 +199,7 @@ export default function AdminReportCreate() {
 
         <Box className="boxSection remarkInputBox textAreyaWLabelBox">
           <Typography className='v2TextArLabel'>Remarks, Information, Further Measure Necessary</Typography>
-          <Box width={"100%"} height={"220px"} className="textareaInput">
+          <Box width={"100%"} className="textareaInput remarkBoxH">
             <textarea type="text" placeholder='9 Channel Powerdome Nova + Starmaster SB Hybrid Planetarium' />
             <Typography className='textCountText'>0/200</Typography>
           </Box>
@@ -218,7 +208,6 @@ export default function AdminReportCreate() {
 
         <Box className="f4MainBox">
           <Typography className='v2TextArLabel'>Confirmation of Proper Execution of maintenance, end of service work, complete and satisfactory functioning of the Instrument.</Typography>
-
           <Box className="signatureMainBox">
             <Box className="signatureInnerBox"><Typography className='v2TextArLabel'>Place & Date</Typography></Box>
             <Box className="signatureInnerBox"><Typography className='v2TextArLabel'>Signature Of Customer</Typography></Box>

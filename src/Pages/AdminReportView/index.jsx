@@ -39,6 +39,12 @@ export default function AdminReportView() {
           <img src={backArrow} onClick={() => Navigate("/admin/list-view")} />
           <Typography>Service Report</Typography>
         </Box>
+        <Box className="MobileNavBackBar">
+          <img className='MClogo' src={Clog} />
+          <Box className="serviceLabel">
+            <Typography>Service Report</Typography>
+          </Box>
+        </Box>
         <Box className="boxSection">
           <Box className="boxItemSection f1Box aClogBox">
             <img src={Clog} />
@@ -58,34 +64,34 @@ export default function AdminReportView() {
 
             <Box sx={{ marginTop: "0px" }} className="inputBoxWLabel inputWlMargin ">
               <Typography className='inpBWLabelText'>Client Name:</Typography>
-              <Box width={"65%"}>
+              <Box className="width65D">
                 <Typography className="reportClientVal">National</Typography>
               </Box>
             </Box>
 
             <Box className="inputBoxWLabel inputWlMargin">
               <Typography className='inpBWLabelText'>Order Date:</Typography>
-              <Box width={"65%"} >
+              <Box className="width65D" >
                 <Typography className="reportClientVal">2014 Service Contact</Typography>
               </Box>
             </Box>
             <Box className="inputBoxWLabel inputWlMargin">
               <Typography className='inpBWLabelText'>Type Of Service:</Typography>
-              <Box width={"65%"} >
+              <Box className="width65D" >
                 <Typography className="reportClientVal">Maintenance</Typography>
               </Box>
             </Box>
 
             <Box className="inputBoxWLabel inputWlMargin">
               <Typography className='inpBWLabelText'>Type Of Instruments:</Typography>
-              <Box width={"65%"} >
+              <Box className="width65D" >
                 <Typography className="reportClientVal">9 Channel Powerdome Nova + Starmaster SB Hybrid Planetarium</Typography>
               </Box>
             </Box>
 
             <Box className="inputBoxWLabel inputWlMargin">
               <Typography className='inpBWLabelText'>Address:</Typography>
-              <Box width={"65%"} >
+              <Box className="width65D" >
                 <Typography className="reportClientVal">KSSTM, Vikas Bhavan PO. Trivandrum. Kolkata 700089</Typography>
               </Box>
             </Box>
@@ -164,7 +170,7 @@ export default function AdminReportView() {
           </Box>
         </Box>
 
-        <Box className="boxSection remarkInputBox">
+        <Box className="boxSection remarkInputBox textAreyaWLabelBox">
           <Typography className='v2TextArLabel'>Remarks, Information, Further Measure Necessary</Typography>
           <Typography color="#4E4C54" mt={2}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet vivamus sagittis tellus sed cras. Vitae, vulputate integer auctor in tincidunt nisl, sagittis mauris diam. Sagittis, mattis adipiscing faucibus consectetur etiam sit cursus risus. Vitae at rhoncus magna non volutpat, enim. Tortor montes, felis justo maecenas elit eget urna. Lectus id bibendum pellentesque scelerisque neque. Id et elit, eu scelerisque placerat. Mauris, consequat, a porttitor in vulputate tempus tincidunt donec. Lacinia bibendum massa sed imperdiet diam in. Vulputate at pretium non gravida enim, congue viverra porttitor.</Typography>
         </Box>
