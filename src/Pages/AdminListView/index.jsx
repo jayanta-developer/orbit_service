@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./style.css";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 
 import cLogo from "../../Assets/Images/coLogo.png";
@@ -14,21 +14,22 @@ import orangeDot from "../../Assets/Images/orangeDot.png";
 import haumIcon from "../../Assets/Images/huamIcon.png";
 import calendarIcon from "../../Assets/Images/calendarIcon.png";
 import notificationIcon from "../../Assets/Images/notificationsIcon.png";
-import avatar from "../../Assets/Images/avatar.png"
-import dArrow from "../../Assets/Images/dobelArrow.png"
+import avatar from "../../Assets/Images/avatar.png";
+import dArrow from "../../Assets/Images/dobelArrow.png";
 import GPDF from "../../Assets/Images/greenPDF.png";
 import BPDF from "../../Assets/Images/blackPDF.png";
 import eyeIcon from "../../Assets/Images/blackEyeIcon.png";
-import editIcon from "../../Assets/Images/icons8-edit-64.png"
+import editIcon from "../../Assets/Images/icons8-edit-64.png";
 import logOutIcon from "../../Assets/Images/logout-24.png"
-import E_avatar from "../../Assets/Images/E_avatar.png"
-import cameraIcon from "../../Assets/Images/cameraIcon.png"
+import E_avatar from "../../Assets/Images/E_avatar.png";
+import cameraIcon from "../../Assets/Images/cameraIcon.png";
+import cross from "../../Assets/Images/BlockCross.png"
 
 
 //component
 import { Box, Typography } from '@mui/material';
 import { SearchBar, DropBox } from "../../Components/Tools";
-import { GreenBtn } from "../../Components/AppButton"
+import { GreenBtn } from "../../Components/AppButton";
 
 //data
 import { ReportsApproved, ReportsPending, ReportsDecline, countries, india_states, west_bengal_cities, engineersData, bellDropItem } from "../../Assets/Data"
@@ -39,24 +40,24 @@ export default function UserListView() {
   const [sideDropItem2, setSideDropItem2] = useState(false);
   const [sideDropItem3, setSideDropItem3] = useState(false);
   const [sideDropItem4, setSideDropItem4] = useState(false);
-  const [shortDrop, setShortDrop] = useState(false)
+  const [shortDrop, setShortDrop] = useState(false);
   const [shortDropVal, setShortDropVal] = useState("Shorted By Date - New");
   const [currentPage, setCurrentPage] = useState(0);
   const [newArrayData, setNewArrayData] = useState([]);
-  const [profileDrop, setProfileDrop] = useState(false)
+  const [profileDrop, setProfileDrop] = useState(false);
   const [selectedTab, setSelectedTab] = useState("All Reports")
 
-  const [shortDrop1, setShortDrop1] = useState(false)
+  const [shortDrop1, setShortDrop1] = useState(false);
   const [shortDropVal1, setShortDropVal1] = useState("Select Country");
 
   const [shortDrop2, setShortDrop2] = useState(false)
   const [shortDropVal2, setShortDropVal2] = useState("Select State");
 
-  const [shortDrop3, setShortDrop3] = useState(false)
+  const [shortDrop3, setShortDrop3] = useState(false);
   const [shortDropVal3, setShortDropVal3] = useState("Select City");
-  const [bellDrop, setBellDrop] = useState(false)
-  const [bellDropVal, setBellDropVal] = useState()
-  const [sideMOpen, setSideMOpen] = useState(true)
+  const [bellDrop, setBellDrop] = useState(false);
+  const [bellDropVal, setBellDropVal] = useState();
+  const [sideMOpen, setSideMOpen] = useState(false);
 
 
   //print date
@@ -127,12 +128,22 @@ export default function UserListView() {
   return (
     <>
       <Box className="listContainer userListBox">
-        <Box className="sideMenu" minWidth={sideMOpen ? "300px" : "60px"}>
+        <Box className={sideMOpen ? "sideMenu sideMenuOpen" : "sideMenu"}>
           {
             sideMOpen ?
               <img className='mainClogo' src={cLogo} /> :
               <img className='SmainClogo' src={SClogo} style={{ width: "50px" }} />
           }
+
+          <Box className="mobileOuterBox" sx={{ display: sideMOpen ? "flex" : 'none' }}>
+            <Box className="mobileClogSection">
+              <img className='mobileLogo' src={cLogo} />
+              <Box className="topMNavBtn" onClick={() => setSideMOpen(!sideMOpen)}>
+                <img src={cross} />
+              </Box>
+            </Box>
+          </Box>
+
 
           {/* Service Repor */}
           <Box className="sideMenuDropBox" onClick={() => {
@@ -229,6 +240,14 @@ export default function UserListView() {
         </Box>
 
         <Box className="mainBox">
+          <Box mb={2} className="mobileOuterBox" sx={{ display: sideMOpen ? "flex" : 'flex' }}>
+            <Box className="mobileClogSection">
+              <img className='mobileLogo' src={cLogo} />
+              <Box className="topMNavBtn" onClick={() => setSideMOpen(!sideMOpen)}>
+                <img src={haumIcon} />
+              </Box>
+            </Box>
+          </Box>
           {/* Service Repor */}
           <Box className="sectionNav">
             <Box className="headerLabel">
@@ -258,7 +277,7 @@ export default function UserListView() {
               </Box>
 
               <Box className="avatar_Box">
-                <img src={avatar} />
+                <img src={avatar} className='avatar' />
                 <Typography className='NavUserName' sx={{ cursor: "pointer" }} onClick={() => setProfileDrop(!profileDrop)}>User name</Typography>
                 <img onClick={() => setProfileDrop(!profileDrop)} src={dropIcon} style={{ rotate: profileDrop ? "180deg" : "0deg" }} />
                 <Box className="dropItemBox avaratDropBox" sx={{ display: profileDrop ? "flex" : "none" }}>

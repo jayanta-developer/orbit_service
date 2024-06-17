@@ -17,7 +17,6 @@ export default function App() {
         <Route path="/login" element={<Auth />} />
         <Route path="/user/list-view" element={<UserListView />} />
         <Route path="/admin/list-view" element={<AdminListView />} />
-
         <Route path="/admin/report/create" element={<AdminReportCreate />} />
         <Route path="/admin/report/approve" element={<AdminApprove />} />
         <Route path="/admin/report/view" element={<AdminReportView />} />

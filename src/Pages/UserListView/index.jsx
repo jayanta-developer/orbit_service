@@ -94,13 +94,12 @@ export default function UserListView() {
   return (
     <>
       <Box className="listContainer userListBox">
-        <Box className="sideMenu" minWidth={sideMOpen ? "300px" : "60px"}>
+        <Box className={sideMOpen ? "sideMenu sideMenuOpen" : "sideMenu"}>
           {
             sideMOpen ?
               <img className='mainClogo' src={cLogo} /> :
               <img className='SmainClogo' src={SClogo} style={{ width: "50px" }} />
           }
-
 
           {/* Service Repor */}
           <Box className="sideMenuDropBox" onClick={() => setSideDropItem(!sideDropItem)}>
