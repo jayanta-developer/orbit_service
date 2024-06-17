@@ -6,7 +6,7 @@
   gap: 10px;
 }
 .sideMenu {
-  height: 100vh;
+  height: auto;
   min-height: 100vh;
   border-radius: 10px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -401,6 +401,9 @@
   }
   .headerLabel {
     width: 60%;
+  }
+  .sideMenu {
+    height: 100vh;
   }
 }
 /* desktop view */

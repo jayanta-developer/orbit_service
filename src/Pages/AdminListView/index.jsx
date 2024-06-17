@@ -413,17 +413,17 @@ export default function UserListView() {
           {/* ------------------------------------Add New Clients---------------------------- */}
           <Box sx={{ display: selectedTab === "Add New Clients" ? "block" : "none" }} className="createSection">
             <Box className="inputDropBox">
-              <Box width={"25%"} className="upLabel">
+              <Box className="upLabel AdCFDrop" >
                 <Typography className='dropLabel'>Select Region</Typography>
                 <DropBox dropItem={countries} drop={shortDrop1} setDrop={setShortDrop1} dropVal={shortDropVal1} setDropVal={setShortDropVal1} />
               </Box>
-              <Box width={"25%"}>
+              <Box className="AdCFDrop">
                 <DropBox dropItem={india_states} drop={shortDrop2} setDrop={setShortDrop2} dropVal={shortDropVal2} setDropVal={setShortDropVal2} />
               </Box>
-              <Box width={"25%"}>
+              <Box className="AdCFDrop">
                 <DropBox dropItem={west_bengal_cities} drop={shortDrop3} setDrop={setShortDrop3} dropVal={shortDropVal3} setDropVal={setShortDropVal3} />
               </Box>
-              <Box width={"25%"} className="upLabel">
+              <Box className="upLabel AdCFDrop">
                 <Typography className='dropLabel'>Client ID</Typography>
                 <input className='appInput' placeholder='Type Client ID' />
               </Box>
@@ -504,17 +504,17 @@ export default function UserListView() {
               </Box>
             </Box>
 
-            <GreenBtn btnText="Add Engineer" />
+            <Box className="adEnBtnBox"><GreenBtn btnText="Add Engineer" /></Box>
           </Box>
 
           {/* ------------------------------All engineers------------------------------ */}
 
           <Box width={"100%"} sx={{ display: selectedTab === "All Engineers" ? "block" : 'none' }}>
             <Box className="searchAndShotrBox">
-              <Box width={"65%"}>
+              <Box className="listPageSearchBox">
                 <SearchBar placeholder="Search.." />
               </Box>
-              <Box width={"35%"}>
+              <Box className="listPageDateDrop">
                 <DropBox dropItem={shortItems} drop={shortDrop} setDrop={setShortDrop} dropVal={shortDropVal} setDropVal={setShortDropVal} />
               </Box>
             </Box>

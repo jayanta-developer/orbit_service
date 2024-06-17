@@ -4,11 +4,11 @@
 .inputDropBox {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  margin: 55px 0;
-  margin-top: 75px;
-  gap: 30px;
+  margin: 13px 0;
+  margin-top: 10px;
+  gap: 9px;
 }
 .appInput {
   width: 100%;
@@ -23,6 +23,7 @@
 }
 .upLabel {
   position: relative;
+  margin-top: 55px;
 }
 .dropLabel {
   font-size: 20px !important;
@@ -34,16 +35,16 @@
 }
 .inputSection {
   width: 100%;
-  gap: 40px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
   margin-bottom: 40px;
 }
 .InnerinputSection {
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  padding-right: 8px;
+  margin-top: 10px;
 }
 .inputSectionHeader {
   font-size: 20px !important;
@@ -57,23 +58,25 @@
   margin-bottom: 10px !important;
 }
 .avatarBox {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
   position: relative;
 }
 .avatarEImg {
-  width: 100%;
-  height: 100%;
+  width: 100px;
+  height: 100px;
 }
 .avatarCIcon {
-  width: 30px;
-  height: 30px;
+  width: 19px;
+  height: 19px;
   position: absolute;
-  bottom: 29px;
-  right: 30px;
+  bottom: -8px;
+  right: 119px;
 }
 .enAddressTextArea {
-  height: 150px;
+  height: 156px;
   padding: 15px 20px;
 }
 .tabelAvatar {
@@ -92,4 +95,67 @@
 .tabelEdit img {
   width: 20px;
   margin-right: 10px;
+}
+.adEnBtnBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.AdCFDrop {
+  width: 100%;
+}
+/* tabe view */
+@media (min-width: 768px) {
+  .avatarBox {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    left: -40px;
+  }
+  .avatarEImg {
+    width: 100%;
+    height: 100%;
+  }
+  .avatarCIcon {
+    width: 30px;
+    height: 30px;
+    bottom: 45px;
+    right: 37px;
+  }
+  .inputSection {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .InnerinputSection {
+    width: 50%;
+    padding-right: 0px;
+    margin-top: 0px;
+  }
+  .inputSection {
+    gap: 40px;
+  }
+  .adEnBtnBox {
+    justify-content: start;
+  }
+  .inputDropBox {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 55px 0;
+    margin-top: 75px;
+  }
+  .AdCFDrop {
+    width: 25%;
+  }
+  .upLabel {
+    margin-top: 0px;
+  }
+}
+
+/* desktop view */
+
+@media (min-width: 1000px) {
+  .inputDropBox {
+    gap: 30px;
+  }
 }
