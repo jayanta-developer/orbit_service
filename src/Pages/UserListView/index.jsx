@@ -18,6 +18,8 @@ import BPDF from "../../Assets/Images/blackPDF.png";
 import eyeIcon from "../../Assets/Images/blackEyeIcon.png";
 import editIcon from "../../Assets/Images/icons8-edit-64.png"
 import logOutIcon from "../../Assets/Images/logout-24.png"
+import cross from "../../Assets/Images/BlockCross.png"
+
 
 
 //component
@@ -101,6 +103,15 @@ export default function UserListView() {
               <img className='SmainClogo' src={SClogo} style={{ width: "50px" }} />
           }
 
+          <Box className="mobileOuterBox" sx={{ display: sideMOpen ? "flex" : 'none' }}>
+            <Box className="mobileClogSection">
+              <img className='mobileLogo' src={cLogo} />
+              <Box className="topMNavBtn" onClick={() => setSideMOpen(!sideMOpen)}>
+                <img src={cross} />
+              </Box>
+            </Box>
+          </Box>
+
           {/* Service Repor */}
           <Box className="sideMenuDropBox" onClick={() => setSideDropItem(!sideDropItem)}>
             <img src={financeIcon} />
@@ -141,6 +152,14 @@ export default function UserListView() {
         </Box>
 
         <Box className="mainBox">
+          <Box mb={2} className="mobileOuterBox" sx={{ display: sideMOpen ? "flex" : 'flex' }}>
+            <Box className="mobileClogSection">
+              <img className='mobileLogo' src={cLogo} />
+              <Box className="topMNavBtn" onClick={() => setSideMOpen(!sideMOpen)}>
+                <img src={haumIcon} />
+              </Box>
+            </Box>
+          </Box>
           {/* Service Repor */}
           <Box className="sectionNav">
             <Box className="headerLabel">
@@ -170,8 +189,8 @@ export default function UserListView() {
               </Box>
 
               <Box className="avatar_Box">
-                <img src={avatar} />
-                <Typography sx={{ cursor: "pointer" }} onClick={() => setProfileDrop(!profileDrop)}>User name</Typography>
+                <img src={avatar} className='avatar' />
+                <Typography className='NavUserName' sx={{ cursor: "pointer" }} onClick={() => setProfileDrop(!profileDrop)}>User name</Typography>
                 <img onClick={() => setProfileDrop(!profileDrop)} src={dropIcon} style={{ rotate: profileDrop ? "180deg" : "0deg" }} />
                 <Box className="dropItemBox avaratDropBox" sx={{ display: profileDrop ? "flex" : "none" }}>
 

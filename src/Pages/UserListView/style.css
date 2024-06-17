@@ -506,6 +506,9 @@
     width: 56px;
     height: 56px;
   }
+  .avatar_Box .dropItemBox {
+    left: 32px;
+  }
 }
 /* desktop view */
 
