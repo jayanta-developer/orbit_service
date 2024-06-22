@@ -29,10 +29,22 @@ import cross from "../../Assets/Images/BlockCross.png"
 //component
 import { Box, Typography } from '@mui/material';
 import { SearchBar, DropBox } from "../../Components/Tools";
-import { GreenBtn } from "../../Components/AppButton";
+import { GreenBtn, RedBtn } from "../../Components/AppButton";
 
 //data
-import { ReportsApproved, ReportsPending, ReportsDecline, countries, india_states, west_bengal_cities, engineersData, bellDropItem } from "../../Assets/Data"
+import {
+  ReportsApproved,
+  ReportsPending,
+  ReportsDecline,
+  countries,
+  india_states,
+  west_bengal_cities,
+  engineersData,
+  bellDropItem,
+  allCuntryTabelData,
+  allStateTabelData,
+  allCityTabelData
+} from "../../Assets/Data"
 
 export default function UserListView() {
   const Navigate = useNavigate()
@@ -55,6 +67,17 @@ export default function UserListView() {
 
   const [shortDrop3, setShortDrop3] = useState(false);
   const [shortDropVal3, setShortDropVal3] = useState("Select City");
+
+  const [shortDrop4, setShortDrop4] = useState(false);
+  const [shortDropVal4, setShortDropVal4] = useState("10");
+
+  const [shortDrop5, setShortDrop5] = useState(false);
+  const [shortDropVal5, setShortDropVal5] = useState("Select City");
+  const [shortDrop6, setShortDrop6] = useState(false);
+  const [shortDropVal6, setShortDropVal6] = useState("Select Country");
+  const [shortDrop7, setShortDrop7] = useState(false);
+  const [shortDropVal7, setShortDropVal7] = useState("Select State");
+
   const [bellDrop, setBellDrop] = useState(false);
   const [bellDropVal, setBellDropVal] = useState();
   const [sideMOpen, setSideMOpen] = useState(false);
@@ -84,14 +107,16 @@ export default function UserListView() {
   ]
   const regionList = [
     "All Country",
-    "Add State",
-    "Add City",
+    "All State",
+    "All City",
     "Add Region",
   ]
   const shortItems = [
     "Shorted By Date - New",
     "Shorted By Date - old",
   ]
+
+  const pageItem = [10, 20, 30]
 
   const combinedArray = ReportsApproved.concat(ReportsPending, ReportsDecline);
 
@@ -297,7 +322,18 @@ export default function UserListView() {
             </Box>
           </Box>
 
-          <Box width={"100%"} sx={{ display: selectedTab === "Add New Clients" || selectedTab === "Add New Engineers" || selectedTab === "All Engineers" ? "none" : "block" }}>
+          <Box width={"100%"}
+            sx={{
+              display:
+                selectedTab === "Add New Clients" ||
+                  selectedTab === "Add New Engineers" ||
+                  selectedTab === "All Engineers" ||
+                  selectedTab === "All Country" ||
+                  selectedTab === "All State" ||
+                  selectedTab === "Add Region" ||
+                  selectedTab === "All City" ?
+                  "none" : "block"
+            }}>
             <Box className="searchAndShotrBox">
               <Box className="listPageSearchBox">
                 <SearchBar placeholder="Search.." />
@@ -643,6 +679,371 @@ export default function UserListView() {
             </Box>
           </Box>
 
+          {/* ------------All Country----------------- */}
+          <Box width={"100%"} sx={{ display: selectedTab === "All Country" ? "block" : "none" }}>
+            <Box className="searchAndShotrBox">
+              <Box className="listPageSearchBox">
+                <SearchBar placeholder="Search.." />
+              </Box>
+              <Box className="listPageDateDrop">
+                <DropBox dropItem={pageItem} drop={shortDrop4} setDrop={setShortDrop4} dropVal={shortDropVal4} setDropVal={setShortDropVal4} />
+              </Box>
+            </Box>
+
+            {/* Table */}
+            <Box className="workListBox">
+              <Box className="haderRow" minWidth={"1100px"}>
+                <Box minWidth={"25%"} className="Tabelsel TabelStatesel TabelselItemStart tabelFChechBox">
+                  <img src={dArrow} />
+                  <Typography>#</Typography>
+                </Box>
+                <Box minWidth={"25%"} className="Tabelsel TabelselItemStart tabelFChechBox">
+                  <img src={dArrow} />
+                  <Typography>Country</Typography>
+                </Box>
+                <Box minWidth={"25%"} className="Tabelsel TabelselItemStart tabelFChechBox">
+                  <img src={dArrow} />
+                  <Typography>Action</Typography>
+                </Box>
+              </Box>
+              {allCuntryTabelData &&
+                allCuntryTabelData?.map((el, index) => (
+                  <Box key={index} className="TabelRow" minWidth={"1100px"}>
+                    <Box minWidth={"25%"} className="Tabelsel tabelFChechBox">
+                      <Typography>{index + 1}</Typography>
+                    </Box>
+                    <Box minWidth={"25%"} className="Tabelsel Tabelcentersel">
+                      <Typography>{el}</Typography>
+                    </Box>
+                    <Box minWidth={"25%"} className="Tabelsel Tabelcentersel ">
+                      <RedBtn btnText="Delete" width="95px" />
+                    </Box>
+                  </Box>
+                ))}
+            </Box>
+
+
+            <Box className="pagenation">
+              <Box mr={1} onClick={handlePrev} className="tabelBtn">
+                <img style={{ rotate: "90deg" }} src={dropIcon} />
+              </Box>
+
+              <Box className="pageNumberBox">
+                <Box
+                  onClick={() => setCurrentPage(0)}
+                  className={
+                    currentPage === 0 ? "pageNumber pageNumberActive" : "pageNumber"
+                  }
+                >
+                  <p>1</p>
+                </Box>
+                <Box
+                  onClick={() => setCurrentPage(1)}
+                  className={
+                    currentPage === 1 ? "pageNumber pageNumberActive" : "pageNumber"
+                  }
+                >
+                  <p>2</p>
+                </Box>
+                <Box
+                  onClick={() => setCurrentPage(2)}
+                  className={
+                    currentPage === 2 ? "pageNumber pageNumberActive" : "pageNumber"
+                  }
+                >
+                  <p>3</p>
+                </Box>
+                <Box
+                  onClick={() => setCurrentPage(3)}
+                  className={
+                    currentPage === 3 ? "pageNumber pageNumberActive" : "pageNumber"
+                  }
+                >
+                  <p>4</p>
+                </Box>
+                <Box
+                  onClick={() => setCurrentPage(4)}
+                  className={
+                    currentPage === 4 ? "pageNumber pageNumberActive" : "pageNumber"
+                  }
+                >
+                  <p>5</p>
+                </Box>
+              </Box>
+
+              <Box ml={1} onClick={handleNext} className="tabelBtn">
+                <img style={{ rotate: "270deg" }} src={dropIcon} />
+              </Box>
+            </Box>
+
+
+          </Box>
+
+
+
+          {/* ------------All State----------------- */}
+          <Box width={"100%"} sx={{ display: selectedTab === "All State" ? "block" : "none" }}>
+            <Box className="searchAndShotrBox">
+              <Box className="listPageSearchBox">
+                <SearchBar placeholder="Search.." />
+              </Box>
+              <Box className="listPageDateDrop">
+                <DropBox dropItem={pageItem} drop={shortDrop4} setDrop={setShortDrop4} dropVal={shortDropVal4} setDropVal={setShortDropVal4} />
+              </Box>
+            </Box>
+
+            {/* Table */}
+            <Box className="workListBox">
+              <Box className="haderRow" minWidth={"1100px"}>
+                <Box minWidth={"25%"} className="Tabelsel TabelStatesel TabelselItemStart tabelFChechBox">
+                  <img src={dArrow} />
+                  <Typography>#</Typography>
+                </Box>
+                <Box minWidth={"25%"} className="Tabelsel TabelselItemStart tabelFChechBox">
+                  <img src={dArrow} />
+                  <Typography>Country</Typography>
+                </Box>
+                <Box minWidth={"25%"} className="Tabelsel TabelselItemStart tabelFChechBox">
+                  <img src={dArrow} />
+                  <Typography>State</Typography>
+                </Box>
+                <Box minWidth={"25%"} className="Tabelsel TabelselItemStart tabelFChechBox">
+                  <img src={dArrow} />
+                  <Typography>Action</Typography>
+                </Box>
+              </Box>
+              {allStateTabelData &&
+                allStateTabelData?.map((el, index) => (
+                  <Box key={index} className="TabelRow" minWidth={"1100px"}>
+                    <Box minWidth={"25%"} className="Tabelsel tabelFChechBox">
+                      <Typography>{index + 1}</Typography>
+                    </Box>
+                    <Box minWidth={"25%"} className="Tabelsel Tabelcentersel">
+                      <Typography>{el.country}</Typography>
+                    </Box>
+                    <Box minWidth={"25%"} className="Tabelsel Tabelcentersel">
+                      <Typography>{el.state}</Typography>
+                    </Box>
+                    <Box minWidth={"25%"} className="Tabelsel Tabelcentersel ">
+                      <RedBtn btnText="Delete" width="95px" />
+                    </Box>
+                  </Box>
+                ))}
+            </Box>
+
+
+            <Box className="pagenation">
+              <Box mr={1} onClick={handlePrev} className="tabelBtn">
+                <img style={{ rotate: "90deg" }} src={dropIcon} />
+              </Box>
+
+              <Box className="pageNumberBox">
+                <Box
+                  onClick={() => setCurrentPage(0)}
+                  className={
+                    currentPage === 0 ? "pageNumber pageNumberActive" : "pageNumber"
+                  }
+                >
+                  <p>1</p>
+                </Box>
+                <Box
+                  onClick={() => setCurrentPage(1)}
+                  className={
+                    currentPage === 1 ? "pageNumber pageNumberActive" : "pageNumber"
+                  }
+                >
+                  <p>2</p>
+                </Box>
+                <Box
+                  onClick={() => setCurrentPage(2)}
+                  className={
+                    currentPage === 2 ? "pageNumber pageNumberActive" : "pageNumber"
+                  }
+                >
+                  <p>3</p>
+                </Box>
+                <Box
+                  onClick={() => setCurrentPage(3)}
+                  className={
+                    currentPage === 3 ? "pageNumber pageNumberActive" : "pageNumber"
+                  }
+                >
+                  <p>4</p>
+                </Box>
+                <Box
+                  onClick={() => setCurrentPage(4)}
+                  className={
+                    currentPage === 4 ? "pageNumber pageNumberActive" : "pageNumber"
+                  }
+                >
+                  <p>5</p>
+                </Box>
+              </Box>
+
+              <Box ml={1} onClick={handleNext} className="tabelBtn">
+                <img style={{ rotate: "270deg" }} src={dropIcon} />
+              </Box>
+            </Box>
+
+
+          </Box>
+          {/* ------------All City----------------- */}
+          <Box width={"100%"} sx={{ display: selectedTab === "All City" ? "block" : "none" }}>
+            <Box className="searchAndShotrBox">
+              <Box className="listPageSearchBox">
+                <SearchBar placeholder="Search.." />
+              </Box>
+              <Box className="listPageDateDrop">
+                <DropBox dropItem={pageItem} drop={shortDrop4} setDrop={setShortDrop4} dropVal={shortDropVal4} setDropVal={setShortDropVal4} />
+              </Box>
+            </Box>
+
+            {/* Table */}
+            <Box className="workListBox">
+              <Box className="haderRow" minWidth={"1100px"}>
+                <Box minWidth={"20%"} className="Tabelsel TabelStatesel TabelselItemStart tabelFChechBox">
+                  <img src={dArrow} />
+                  <Typography>#</Typography>
+                </Box>
+                <Box minWidth={"20%"} className="Tabelsel TabelselItemStart tabelFChechBox">
+                  <img src={dArrow} />
+                  <Typography>Country</Typography>
+                </Box>
+                <Box minWidth={"20%"} className="Tabelsel TabelselItemStart tabelFChechBox">
+                  <img src={dArrow} />
+                  <Typography>State</Typography>
+                </Box>
+                <Box minWidth={"20%"} className="Tabelsel TabelselItemStart tabelFChechBox">
+                  <img src={dArrow} />
+                  <Typography>City</Typography>
+                </Box>
+                <Box minWidth={"20%"} className="Tabelsel TabelselItemStart tabelFChechBox">
+                  <img src={dArrow} />
+                  <Typography>Action</Typography>
+                </Box>
+              </Box>
+              {allCityTabelData &&
+                allCityTabelData?.map((el, index) => (
+                  <Box key={index} className="TabelRow" minWidth={"1100px"}>
+                    <Box minWidth={"20%"} className="Tabelsel tabelFChechBox">
+                      <Typography>{index + 1}</Typography>
+                    </Box>
+                    <Box minWidth={"20%"} className="Tabelsel Tabelcentersel">
+                      <Typography>{el.country}</Typography>
+                    </Box>
+                    <Box minWidth={"20%"} className="Tabelsel Tabelcentersel">
+                      <Typography>{el.state}</Typography>
+                    </Box>
+                    <Box minWidth={"20%"} className="Tabelsel Tabelcentersel">
+                      <Typography>{el.city}</Typography>
+                    </Box>
+                    <Box minWidth={"20%"} className="Tabelsel Tabelcentersel ">
+                      <RedBtn btnText="Delete" width="95px" />
+                    </Box>
+                  </Box>
+                ))}
+            </Box>
+
+
+            <Box className="pagenation">
+              <Box mr={1} onClick={handlePrev} className="tabelBtn">
+                <img style={{ rotate: "90deg" }} src={dropIcon} />
+              </Box>
+
+              <Box className="pageNumberBox">
+                <Box
+                  onClick={() => setCurrentPage(0)}
+                  className={
+                    currentPage === 0 ? "pageNumber pageNumberActive" : "pageNumber"
+                  }
+                >
+                  <p>1</p>
+                </Box>
+                <Box
+                  onClick={() => setCurrentPage(1)}
+                  className={
+                    currentPage === 1 ? "pageNumber pageNumberActive" : "pageNumber"
+                  }
+                >
+                  <p>2</p>
+                </Box>
+                <Box
+                  onClick={() => setCurrentPage(2)}
+                  className={
+                    currentPage === 2 ? "pageNumber pageNumberActive" : "pageNumber"
+                  }
+                >
+                  <p>3</p>
+                </Box>
+                <Box
+                  onClick={() => setCurrentPage(3)}
+                  className={
+                    currentPage === 3 ? "pageNumber pageNumberActive" : "pageNumber"
+                  }
+                >
+                  <p>4</p>
+                </Box>
+                <Box
+                  onClick={() => setCurrentPage(4)}
+                  className={
+                    currentPage === 4 ? "pageNumber pageNumberActive" : "pageNumber"
+                  }
+                >
+                  <p>5</p>
+                </Box>
+              </Box>
+
+              <Box ml={1} onClick={handleNext} className="tabelBtn">
+                <img style={{ rotate: "270deg" }} src={dropIcon} />
+              </Box>
+            </Box>
+
+
+          </Box>
+
+
+
+
+          {/* ------------Add Region---------------- */}
+          <Box width={"100%"} className="addRegionBox" sx={{ display: selectedTab === "Add Region" ? "block" : "none" }}>
+            <Box className="ARgoutInputBox">
+              <Typography className='inputSectionHeader'>Add Country</Typography>
+              <input className='appInput' placeholder='Type your country name' />
+            </Box>
+
+
+            <Typography className='inputSectionHeader adrgsInputLabel'>Add State</Typography>
+            <Box className="inputSection">
+              <Box className="InnerinputSection">
+                <Box width={"100%"}>
+                  <DropBox dropItem={india_states} drop={shortDrop5} setDrop={setShortDrop5} dropVal={shortDropVal5} setDropVal={setShortDropVal5} />
+                </Box>
+              </Box>
+
+              <Box className="InnerinputSection">
+                <input className='appInput' placeholder='Type state name' />
+              </Box>
+            </Box>
+
+            <Typography className='inputSectionHeader'>Add Country</Typography>
+            <Box className="inputDropBox">
+              <Box className="adgDrop" >
+                <DropBox dropItem={countries} drop={shortDrop6} setDrop={setShortDrop6} dropVal={shortDropVal6} setDropVal={setShortDropVal6} />
+              </Box>
+              <Box className="adgDrop">
+                <DropBox dropItem={india_states} drop={shortDrop7} setDrop={setShortDrop7} dropVal={shortDropVal7} setDropVal={setShortDropVal7} />
+              </Box>
+              <Box className="adgDrop">
+                <input className='appInput' placeholder='Type City name' />
+              </Box>
+            </Box>
+
+            <Box className="adgBtnBox">
+              <GreenBtn btnText="Save" />
+            </Box>
+
+          </Box>
+
 
 
 
@@ -651,7 +1052,7 @@ export default function UserListView() {
 
 
         </Box>
-        <Box minWidth={"9px"} sx={{ display: sideMOpen ? "block" : "none", transition: "all 0.5s" }}></Box>
+        <Box className={sideMOpen ? "lastBox" : ""}></Box>
 
       </Box>
     </>

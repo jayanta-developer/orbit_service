@@ -338,7 +338,7 @@ export default function UserListView() {
           </Box>
 
         </Box>
-        <Box minWidth={"9px"} sx={{ display: sideMOpen ? "block" : "none", transition: "all 0.5s" }}></Box>
+        <Box className={sideMOpen ? "lastBox" : ""}></Box>
 
       </Box>
     </>

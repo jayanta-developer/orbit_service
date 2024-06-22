@@ -454,7 +454,11 @@
   width: 25px;
   height: 25px;
 }
-
+.lastBox {
+  min-width: 9px;
+  display: block;
+  transition: all 0.5s;
+}
 /* tabe view */
 @media (min-width: 768px) {
   .sideMenuOpen {
@@ -522,5 +526,10 @@
   }
   .sideMenu {
     height: auto;
+  }
+}
+@media (min-width: 1485px) {
+  .lastBox {
+    display: none;
   }
 }

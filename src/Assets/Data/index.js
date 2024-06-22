@@ -521,3 +521,89 @@ export const bellDropItem = [
   "Ryan has Created a report",
   "Piper has Created a report",
 ];
+
+export const allCuntryTabelData = [
+  "Canada",
+  "China",
+  "France",
+  "Germany",
+  "Greece",
+  "India",
+];
+export const allStateTabelData = [
+  {
+    country: "India",
+    state: "Tamil Nadu",
+  },
+  {
+    country: "India",
+    state: "Karnatak",
+  },
+  {
+    country: "India",
+    state: "Maharashtra",
+  },
+  {
+    country: "India",
+    state: "West Bengal",
+  },
+  {
+    country: "India",
+    state: "Kerala",
+  },
+  {
+    country: "India",
+    state: "Kerala",
+  },
+  {
+    country: "Iran",
+    state: "Nishadur",
+  },
+  {
+    country: "India",
+    state: "Bihar",
+  },
+];
+export const allCityTabelData = [
+  {
+    country: "India",
+    state: "Tamil Nadu",
+    city: "Chennai",
+  },
+  {
+    country: "India",
+    state: "Karnatak",
+    city: "Bangalore",
+  },
+  {
+    country: "India",
+    state: "Maharashtra",
+    city: "Nagpur",
+  },
+  {
+    country: "India",
+    state: "Jharkhand",
+    city: "Ranchi",
+  },
+  {
+    country: "India",
+    state: "Kerala",
+    city: "Kozhilkode",
+  },
+
+  {
+    country: "Iran",
+    state: "Nishadur",
+    city: "Ranchi",
+  },
+  {
+    country: "India",
+    state: "Bihar",
+    city: "Patna",
+  },
+  {
+    country: "India",
+    state: "Kerala",
+    city: "Kozhilkode",
+  },
+];

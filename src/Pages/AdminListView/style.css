@@ -105,6 +105,31 @@
 .AdCFDrop {
   width: 100%;
 }
+.addRegionBox .inputSection {
+  width: 100%;
+}
+.addRegionBox .ARgoutInputBox {
+  width: 100%;
+  margin-top: 40px;
+}
+.addRegionBox .ARgoutInputBox .inputSectionHeader {
+  margin-bottom: 20px !important;
+}
+.adrgsInputLabel {
+  margin-bottom: 20px !important;
+  margin-top: 30px !important;
+}
+.addRegionBox .inputDropBox .adgDrop {
+  width: 100%;
+}
+.addRegionBox .inputDropBox {
+  margin-top: 20px;
+}
+.adgBtnBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 /* tabe view */
 @media (min-width: 768px) {
   .avatarBox {
@@ -149,6 +174,12 @@
   }
   .upLabel {
     margin-top: 0px;
+  }
+  .addRegionBox .inputDropBox .adgDrop {
+    width: 33%;
+  }
+  .adgBtnBox {
+    justify-content: end;
   }
 }
 
